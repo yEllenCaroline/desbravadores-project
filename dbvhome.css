@@ -1,0 +1,83 @@
+body{
+    background-image: url(./assets/backgroundv2.jpeg);
+    background-repeat:  repeat;
+    background-size:  contain;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.fundo{
+    height: 100%;
+    width: 100%;
+   
+   
+}
+.bar{
+    background-color: #0b2139;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: 800;
+
+    align-items: center;
+}
+.bar a{
+    color: #ffb45d;
+    text-decoration: none;
+}
+.bar a:hover{
+    color:#32b9cd;
+}
+#button_entrar{
+    height: 2.6vw;
+    width: 7vw;
+    background-color: transparent;
+    border-radius: 10px;
+    border: solid;
+    border-color: #ffb45d;
+    color: white;
+}
+.container{
+    background-image: url(./assets/IMG_2593.png);
+    background-size: cover;
+    opacity: 100;
+    height: 45vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;  
+    text-align:left;
+    font-size: 24pt;
+}
+.container button{
+    height: 3vw;
+    width: 9vw;
+    background-color: #b80019;
+    border-radius: 10px;
+    border: solid;
+    border-color: #b80019;
+    color: white;
+    align-items: left;
+    font-size: 14pt;
+}
+
+
+.container h1{
+    color: #b80019;
+    
+}
+.caixa{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: transparent;
+    height: 100%;
+    width: 38%;
+    font-size: 15pt;
+}
+.container p{
+    padding-right: 3vw;
+    text-align: justify;
+}
