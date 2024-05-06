@@ -1,56 +1,151 @@
-body{
-    background-image: url(./assets/backgroundv2.jpeg);
-    background-repeat:  repeat;
-    background-size:  contain;
+body {
+    background-image: url(./assets/background.jpg);
+    background-repeat: repeat;
+    background-size: contain;
     font-family: 'Montserrat', sans-serif;
     color: white;
+    margin: 0;
+}
+.amarelo{
+    color:#F8B80E
+}
+.azul{
+    color: #006FEB;
+}
+.vermelho{
+    color: #E90100
 }
 
-.fundo{
+.fundo {
     height: 100%;
     width: 100%;
-   
-   
+    background-image: url(./assets/banner1.jpg);
+    background-size: contain;
+    margin: top;
+    background-repeat: no-repeat;
 }
-.bar{
-    background-color: #0b2139;
+
+nav {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Cor de fundo com 50% de opacidade */
     display: flex;
+    height: 15vh;
     flex-direction: row;
     justify-content: space-around;
-    font-weight: 800;
-
+    font-weight: 400;
     align-items: center;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 2px 8px 0 rgba(48, 48, 48, 0.34);
+    
 }
-.bar a{
-    color: #ffb45d;
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 50px; /* Adicionando uma margem à direita de cada item da lista */
+}
+
+nav button{
+    margin-right: 0px; /* Adicionando uma margem à direita de cada item da lista */
+
+}
+
+
+nav a {
+    color: #ffffff;
     text-decoration: none;
 }
-.bar a:hover{
-    color:#32b9cd;
+
+nav a:hover {
+    /* text-decoration:underline; */
+    color: #ffffff;
+    background-image: linear-gradient(to right, #b80019, #5e0511); 
+    
 }
-#button_entrar{
-    height: 2.6vw;
-    width: 7vw;
-    background-color: transparent;
+
+#button_cadastrar {
+    height: 7vh;
+    width: 10vw;
     border-radius: 10px;
-    border: solid;
-    border-color: #ffb45d;
-    color: white;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #FF8E3C;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.container{
-    background-image: url(./assets/IMG_2593.png);
-    background-size: cover;
+#button_cadastrar:hover{
+    color: #ffffff;
+    background-image: linear-gradient(to right, #FFB45D, #FF8E3C); /* Adiciona um degradê ao botão */
+}
+
+#button_entrar {
+    height: 7vh;
+    width: 10vw;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    background-color: #07203C;
+    cursor: pointer;
+    transition: background-color 0.7s ease, color 0.7s ease; /* Adiciona transição suave de cor */
+}
+
+#button_entrar:hover {
+    color: #ffffff;
+    background-image: linear-gradient(to right, #07203C, #1356A2); /* Adiciona um degradê ao botão */
+}
+
+
+
+
+.container {
     opacity: 100;
     height: 45vw;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;  
-    text-align:left;
-    font-size: 24pt;
+    align-items: flex-end;
+    text-align: left;
+    font-size: 22pt;
+    background-color: rgba(0, 0, 0, 0);
 }
-.container button{
+#div_seta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+#div_seta img{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height:8vh;
+    margin-bottom:12vh ;
+    animation: slideDown 1.4s ease forwards 2s, arrowTransition 2s ease-in-out infinite 2s;
+}
+
+@keyframes arrowTransition {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-16px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.container button {
     height: 3vw;
     width: 9vw;
     background-color: #b80019;
@@ -63,21 +158,367 @@ body{
 }
 
 
-.container h1{
+.container h1 {
     color: #b80019;
-    
+
 }
-.caixa{
+
+.caixa {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background-color: transparent;
     height: 100%;
-    width: 38%;
-    font-size: 15pt;
+    width: 45%;
+    font-size: 14pt;
 }
-.container p{
+
+.container p {
     padding-right: 3vw;
     text-align: justify;
+}
+.sobre{
+    margin-top: 25vh;
+    display: flex;
+    flex-direction: row;
+    margin-inline: 15vh;
+    justify-content: space-between;
+}
+#div_caixaTexto{
+    width: 50%;
+    h1{
+        font-size: 22pt;
+        color: #F8B80E;
+    }
+    p{
+        font-size: 14pt;
+    }
+}
+#div_caixaImagem{
+    margin-left: 100px;
+    width: 50%;
+        img{
+            height: 50vh;
+        }
+}
+#bandeira{
+    margin-top: -100px;
+    border: solid ;
+    padding: 10px;
+    border-radius: 15px;
+    transform: rotate(15deg);
+    border-color: #ffffff;
+}
+#desbravadoresLenço{
+    margin-top: -100px;
+    border: solid ;
+    padding: 10px;
+    border-radius: 15px;
+    /* transform: rotate(-15deg); */
+    border-color: #ffffff;
+}
+#classes{
+    margin-top: 30vh;
+}
+#div_classes{
+    display: flex;
+    flex-direction: row;
+    margin-inline: 14vh;
+    margin-left: 18vh;
+    justify-content: space-between;
+    margin-bottom: 30vh;
+}
+#div_classes img{
+    height: 25vh;
+}
+#container_amigo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10.8vw;
+    height: 70vh;
+    background-color:#5658BA;
+    margin-top: -13vh;
+    
+}
+#div_textoAmigo{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 13pt;
+        margin: 0px 0;
+    }
+    h2{
+        font-size: 12pt;
+    } 
+}
+#container_companheiro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 11.1vw;
+    height: 70vh;
+    background-color:#5B0E11;
+    margin-top: -13vh;
+    
+}
+#div_textoCompanheiro{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 13pt;
+        margin: 0px 0;
+    }
+    h2{
+        font-size: 12pt;
+    } 
+}
+#container_pesquisador{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 11.1vw;
+    height: 70vh;
+    background-color:#038045;
+    margin-top: -13vh;
+    
+}
+#div_textoPesquisador{
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 13pt;
+        margin: 0px 0;
+    }
+    h2{
+        font-size: 12pt;
+    } 
+}
+#container_pioneiro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 11.1vw;
+    height: 70vh;
+    background-color:#898A8C;
+    margin-top: -13vh;
+    
+}
+#div_textoPioneiro{
+    margin-top: 1.5vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 13pt;
+        margin: 0px 0;
+    }
+    h2{
+        font-size: 12pt;
+    } 
+}
+#container_excursionista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10.95vw;
+    height: 70vh;
+    background-color:#802871;
+    margin-top: -13vh;
+    
+}
+#div_textoExcursionista{
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 13pt;
+        margin: 0px 0;
+    }
+    h2{
+        font-size: 12pt;
+    } 
+}
+#container_guia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10.8vw;
+    height: 70vh;
+    background-color:#AEA61E;
+    margin-top: -13vh;
+}
+#div_textoGuia{
+    margin-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 13pt;
+        margin: 0px 0;
+    }
+    h2{
+        font-size: 12pt;
+    } 
+}
+#div_amigoAvancado{
+    margin-left: -4vw;
+    margin-top: -4vw;
+    img{
+       height: 12vw;
+    }
+}
+#div_companheiroAvancado{
+    margin-left: -4vw;
+    margin-top: -4vw;
+    img{
+       height: 12vw;
+    }
+}
+#div_pesquisadorAvancado{
+    margin-left: -4vw;
+    margin-top: -4vw;
+    img{
+       height: 12vw;
+    }
+}
+#div_pioneiroAvancado{
+    margin-left: -4vw;
+    margin-top: -4vw;
+    img{
+       height: 12vw;
+    }
+}
+#div_excursionistaAvancado{
+    margin-left: -4vw;
+    margin-top: -4vw;
+    img{
+       height: 12vw;
+    }
+}
+#div_guiaAvancado{
+    margin-left: -4vw;
+    margin-top: -4vw;
+    img{
+       height: 12vw;
+    }
+}
+
+#historia{
+    margin-top: 30vh;
+    display: flex;
+    flex-direction: column;
+    img{
+        height: 48vh;
+    }
+}
+#historia .column-2 {
+    width: 14px;
+    height: 240px;
+    background-color: #ffffff;
+    margin: 80px 60px;
+   
+    transform: rotate(310deg) skew(310deg, 0);
+}
+
+#div_criacao{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+#div_textoCriacao{
+    width: 40%;
+    font-size: 15pt;
+    
+}
+#div_imgCriacao{
+    width: 40%;
+}
+#img_criacao{
+    margin-top: -100px;
+    border: solid ;
+    padding: 10px;
+    border-radius: 15px;
+    /* transform: rotate(-15deg); */
+    border-color: #ffffff;
+}
+
+#div_sulAmericano{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    #div_textoSulAmericano{
+        width: 40%;
+        font-size: 15pt;
+    }
+    #div_imgSulAmericano{
+        width: 40%;
+    }
+}
+#img_sulAmericano{
+    margin-top: -100px;
+    border: solid ;
+    padding-top: 13px ;
+    padding-bottom: 1% ;
+    
+    border-radius: 15px;
+    /* transform: rotate(15deg); */
+    border-color: #ffffff;
+}
+#div_brasil{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    #div_textoBrasil{
+        width: 40%;
+        font-size: 15pt;
+    }
+    #div_imgBrasil{
+        width: 40%;
+    }
+}
+#img_brasil{
+    margin-top: -100px;
+    border: solid ;
+    padding: 10px;
+    border-radius: 15px;
+    /* transform: rotate(-15deg); */
+    border-color: #ffffff;
+}
+#div_campori{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    #div_textoCampori{
+        width: 40%;
+        font-size: 15pt;
+    }
+    #div_imgCampori{
+        width: 40%;
+        img{
+            border-radius: 10px;
+        }
+    }
+}
+#img_campori{
+    margin-top: -100px;
+    border: solid ;
+    padding: 10px;
+    border-radius: 15px;
+    /* transform: rotate(15deg); */
+    border-color: #ffffff;
 }
