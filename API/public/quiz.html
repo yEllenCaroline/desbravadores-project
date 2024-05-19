@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <section id="section_quiz">
+        <div id="div_caixa">
+            <div id="div_opcoes">
+                <div id="div_logo">
+                    <img src="../assets/Wallpaper_Desbravadores-removebg-preview.png" alt="">
+                    <img id="desbravaja" src="./assets/Novo_Projeto-removebg-preview.png" alt="">
+                </div>
+                <div id="div_botao">
+                    <button>Jogo</button>
+                    <button>Estatísticas</button>
+                </div>
+                <div id="div_saida">
+                    <img src="../assets/icone_casa.png" alt="">
+                </div>
+            </div>
+            <!-- <div id="div_quiz">
+                <div id="div_conteudo">
+                   
+                </div>
+            </div> -->
+            <div id="div_questao1" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            1.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="acertar()">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="div_questao2" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            2.
+                        </div>
+                        <h2>A classe de Excursionista é a partir de qual idade?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">10 ANOS</button>
+                            <button onclick="">15 ANOS</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">13 ANOS</button>
+                            <button onclick="acertar()">14 ANOS</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao3" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            3.
+                        </div>
+                        <h2>Qual o significado das cores azul, amarelo, vermelho e branco no símbolo?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="acertar()">LEALDADE, SANGUE, EXELÊNCIA E PUREZA</button>
+                            <button onclick="">AMOR AOS IDEAIS</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">LEALDADE, AMOR, PUREZA, EXELÊNCIA</button>
+                            <button onclick="">PAI, FILHO E ESPIRITO SANTO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="div_questao4" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            4.
+                        </div>
+                        <h2>O que significa o escudo e a espada?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">A TERCEIRA GUERRA MUNDIAL</button>
+                            <button onclick="">ESPECIALIDADE DE ESPARTA</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="acertar()">FÉ E A BIBLIA</button>
+                            <button onclick="">A TRINDADE</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="div_questao5" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            5.
+                        </div>
+                        <h2>Quem criou o hino dos Desbravadores? e onde?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">Fred Johnson, Carro</button>
+                            <button onclick="">Henry Berg, Casa</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="acertar()">Henry Berg, Carro</button>
+                            <button onclick="">Ruy Martins, Igreja</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao6" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            6.
+                        </div>
+                        <h2>Quem desenvolveu esse jogo?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">Hellen Chaves</button>
+                            <button onclick="">Ellen Chavez</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="acertar()">Ellen Chaves</button>
+                            <button onclick="">Eren Yeager</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © ******* *******, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao7" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            7.
+                        </div>
+                        <h2>Quem desnhou a bandeira dos Desbravadores?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">J. JACOBO</button>
+                            <button onclick="">ELLEN G. WHITE</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">BARRICK GANDY</button>
+                            <button onclick="acertar()">HENRY BERG</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao8" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            8.
+                        </div>
+                        <h2>Salvar do pecado e guiar no serviço, pertence a qual de nossos ideais?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">LEMA</button>
+                            <button onclick="acertar()">OBJETIVO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">ALVO</button>
+                            <button onclick="">LEI</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao9" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            9.
+                        </div>
+                        <h2>Qual das alternativas é uma classe dos Desbravadores?/h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">AMIGO</button>
+                            <button onclick="">GUIA</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">COMPANHEIRO</button>
+                            <button onclick="">PESQUISADOR</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4><span onclick="acertar()" style="cursor: pointer;">Todos</span> os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao10" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            10.
+                        </div>
+                        <h2>Qual o 4 item da Lei dos Desbravadores?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">OBSERVAR A DEVOÇÃO MATINAL</button>
+                            <button onclick="">TER SEMPRE UM CANTICO NO CORAÇÃO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">IR A ONDE DEUS MANDAR</button>
+                            <button onclick="acertar()">MANTER A CONSCIÊNCIA LIMPA</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao11" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            11.
+                        </div>
+                        <h2>Complete: Pela graça de Deus, serei puro...</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">LEAL E BONDOSO</button>
+                            <button onclick="">SERVE DE DEUS E AMIGO DE TODOS</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">AMIGO E FIEL</button>
+                            <button onclick="acertar()">BONDOSO E LEAL</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao12" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            12.
+                        </div>
+                        <h2>Qual nó é ultilizado para finalizar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="acertar()">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ CATAU</button>
+                            <button onclick="">NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao13" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            13.
+                        </div>
+                        <h2>Complete: O alvo nos diz...</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">A MENSAGEM DO ADVENTO A TODO O MUNDO...</button>
+                            <button onclick="">SALVAR DO PECADO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>O AMOR DE CRISTO ME MOTIVA</button>
+                            <button>OBSERVAR A DEVOÇÃO MATINAL</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao14" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            14.
+                        </div>
+                        <h2>O que significa os 4 <span style="color: blue;">A</span> da saudação maranata?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">AMAR, AGUARDAR, APRESSAR E ANUNCIAR</button>
+                            <button onclick="">AGUARDAR, ANUNCIAR AMAR E APRESSAR</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="acertar()">AMAR, ANUNCIAR, APRESSAR E AGUARDAR</button>
+                            <button onclick="">ANUNCIAR, AMAR, GUARDAR E APRESSAR</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao15" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            15.
+                        </div>
+                        <h2>O triangulo dos Desbravadores representa...</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">A BIBLIA, FÉ, PROFECIA</button>
+                            <button onclick="acertar()">DEUS PAI, FILHO E ESPIRITO SANTO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">AS 3 PRIMEIRAS CLASSES</button>
+                            <button onclick="">OS 3 PRINCIPAIS NÓS</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao16" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            16.
+                        </div>
+                        <h2>O que a cor vermelha representa?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">O AMOR</button>
+                            <button onclick="acertar()">O SANGUE DE CRISTO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">SANGUE DOS DESBRAVADORES</button>
+                            <button onclick="">MAÇÃ</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao17" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            17.
+                        </div>
+                        <h2>o que a cor branca representa?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">PAZ</button>
+                            <button onclick="">ANO NOVO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>AMOR</button>
+                            <button>PUREZA</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao18" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            18.
+                        </div>
+                        <h2>O banderim da unidade deve ser carregado pelo?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">INSTRUTOR DO CLUBE</button>
+                            <button onclick="">CAPITÃO</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>CONSELHEIRO</button>
+                            <button>INSTRUTOR</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao19" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            19.
+                        </div>
+                        <h2>Sobre o uniforme de gala, é correto afirmar que...</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">SÓ PODE SER ULTILIZADO POR ALGUEM INVESTIDO</button>
+                            <button onclick="">CADA UNIFORME É FEITO POR CADA CLUBE</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">SÓ É ULTILIZADO NA INVESTIDURA</button>
+                            <button onclick="">TODOS OS UNIFORMES SÃO IGUAIS</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao20" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            20.
+                        </div>
+                        <h2>como é chamada a classe para aqueles que já passaram de 15 anos?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">COMPLETÃO</button>
+                            <button onclick="acertar()">AGRUPADAS</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">LIDER</button>
+                            <button onclick="">PIONEIRO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao21" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            21.
+                        </div>
+                        <h2>Qual destes nós é ultilizado para resgate?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ AZELHA</button>
+                            <button onclick="">NÓ FORCA</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ CATAU</button>
+                            <button onclick="acertar()">LAIS DE GUIA</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao22" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            22.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao23" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            23.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao24" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            24.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao25" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            25.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao26" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            26.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao27" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            27.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao28" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            28.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao29" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            29.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao30" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            30.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao31" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            31.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao32" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            32.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao33" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            33.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao34" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            34.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao35" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            35.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao36" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            36.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao37" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            37.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao38" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            38.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao39" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            39.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao40" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            40.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao41" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            41.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao42" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            42.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao43" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            43.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="div_questao44" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            44.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao45" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            45.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao46" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            46.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao47" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            47.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao48" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            48.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao49" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            49.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_questao50" class="div_quiz">
+                <div id="div_conteudo">
+                    <div id="div_questao">
+                        <div id="div_numQuestao">
+                            50.
+                        </div>
+                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                    </div>
+                    <div id="div_escolhas">
+                        <div id="div_escolhasColuna">
+                            <button onclick="">NÓ DIREITO</button>
+                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        </div>
+                        <div id="div_escolhasColuna">
+                            <button>NÓ CATAU</button>
+                            <button>NÓ ESQUERDO</button>
+                        </div>
+                    </div>
+                    <div id="div_rodape">
+                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                    </div>
+                </div>
+            </div> 
+
+
+        </div>
+    </section>
+</body>
+<script>
+    var cont = 0;
+    var num_questao_atual = 1;
+    var num_questao_anterior = 1;
+
+    function acertar() {
+        num_questao_atual++;
+        num_questao_anterior = num_questao_atual - 1;
+        var guardar_anterior_questao = 'div_questao' + num_questao_anterior;
+        var guardar_proxima_questao = 'div_questao' + num_questao_atual;
+        
+        var anterior_questao = document.getElementById(guardar_anterior_questao)
+        var proxima_questao = document.getElementById(guardar_proxima_questao);
+
+        // Verifica se é uma questão que adiciona 5 pontos
+        if (num_questao_atual === 10 || num_questao_atual === 20 || num_questao_atual === 30 || num_questao_atual === 40 || num_questao_atual === 50) {
+            cont += 5;
+        }
+        // Verifica se é uma questão que adiciona 3 pontos
+        else if (num_questao_atual === 3 || num_questao_atual === 7 || num_questao_atual === 13 || num_questao_atual === 17 || num_questao_atual === 23 || num_questao_atual === 27 || num_questao_atual === 33 || num_questao_atual === 37 || num_questao_atual === 43 || num_questao_atual === 47) {
+            cont += 3;
+        }
+        // Se não, adiciona 1 ponto
+        else {
+            cont += 1;
+        }
+        // Bloqueia a questão anterior
+        anterior_questao.style.display = 'none';
+
+        // Exibe a próxima questão
+        proxima_questao.style.display = 'block';
+    }
+</script>
+
+
+</html>

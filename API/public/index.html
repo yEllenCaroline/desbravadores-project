@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
+    <title>DesbravaJá</title>
+</head>
+
+<body>
+    <section id="home">
+        <div class="fundo">
+            <nav>
+                <img src="../assets/Wallpaper_Desbravadores-removebg-preview.png" alt="logo-escrito" height="60vw">
+
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#sobre">SOBRE</a></li>
+                    <li><a href="#classes">CLASSES</a></li>
+                    <li><a href="#historia">HISTÓRIA</a></li>
+                    <li><a href="#desenvolvedor">DESENVOLVEDOR</a></li>
+                </ul>
+                <a href="./cadastro.html"><button id="button_cadastrar" onclick="cadastrar()">CADASTRAR</button></a>
+                <a href="./login.html"><button id="button_entrar" onclick="entrar()">ENTRAR</button></a>
+            </nav>
+            <div class="container">
+                <div class="caixa">
+                    <h1><span class="amarelo">BEM VINDO</span> <span class="azul">AOS</span> <span
+                            class="vermelho">DESBRAVADORES!</span></h1>
+                    <p>Cada aventura é uma oportunidade para crescermos juntos, tanto espiritualmente quanto como
+                        comunidade. Junte-se a nós nesta jornada emocionante, onde a natureza nos inspira e a amizade
+                        nos fortalece.</p>
+                    <a href="#sobre"><button id="button_saber" onclick="saber()">SAIBA MAIS</button></a>
+                </div>
+                <div id="div_seta">
+                    <img src="../assets/seta (2).png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="sobre">
+            <div id="div_caixaTexto">
+                <h1>O QUE SÃO OS DESBRAVADORES?!</h1>
+                <p>Os Desbravadores são um programa de desenvolvimento de jovens criado e administrado pela Igreja
+                    Adventista do Sétimo Dia. O programa visa ajudar crianças e adolescentes a desenvolverem habilidades
+                    físicas, mentais, sociais e espirituais através de atividades ao ar livre, serviço comunitário,
+                    estudos bíblicos, e outras atividades educacionais e recreativas. Os Desbravadores promovem valores
+                    como liderança, trabalho em equipe, responsabilidade e serviço à comunidade. Os participantes são
+                    organizados em clubes locais, regionais e internacionais, seguindo um conjunto de princípios e
+                    objetivos comuns.</p>
+            </div>
+            <div id="div_caixaImagem">
+                <img id="bandeira" src="../assets/desbravadoresLenço.png" alt="">
+                <img id="desbravadoresLenço" src="../assets/bandeira.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="classes">
+        <div id="div_classes">
+            <div class="div_amigo">
+                <img src="../assets/amigo.png" alt="">
+                <div id="container_amigo">
+                    <div id="div_textoAmigo">
+                        <h1>AMIGO</h1> <br>
+                        <h2>A PARTIR DE 10 ANOS</h2><br><span> Classe para as crianças de 10-11 anos, ondem aprendem a
+                            ser Amigo de
+                            Todos </span><br>
+                        <h1>AVANÇADA</h1>
+                        <h2>Amigo da Natureza</h2>
+                    </div>
+                </div>
+                <div id="div_amigoAvancado">
+                    <img src="../assets/amigoAvançado.png" alt="">
+                </div>
+            </div>
+
+            <div class="div_companheiro">
+                <img src="../assets/companheiro.png" alt="">
+                <div id="container_companheiro">
+                    <div id="div_textoCompanheiro">
+                        <h1>COMPANHEIRO</h1> <br>
+                        <h2>A PARTIR DE 11 ANOS</h2><br><span> Classe para as crianças de 11-12 anos, ondem aprendem a
+                            ser Companheiro de Excursionista </span><br>
+                        <h1>AVANÇADA</h1>
+                        <h2>Companheiro de excursionista</h2>
+                    </div>
+                </div>
+                <div id="div_companheiroAvancado">
+                    <img src="../assets/companheiroAvançado.png" alt="">
+                </div>
+            </div>
+
+            <div class="div_pesquisador">
+                <img src="../assets/pesquisador.png" alt="">
+                <div id="container_pesquisador">
+                    <div id="div_textoPesquisador">
+                        <h1>PESQUISADOR</h1> <br>
+                        <h2>A PARTIR DE 12 ANOS</h2><br><span> Classe para as crianças de 12-13 anos, ondem aprendem a
+                            ser Pesquisadores da Natureza </span><br>
+                        <h1>AVANÇADA</h1>
+                        <h2>Pesquisador da Natureza</h2>
+                    </div>
+                </div>
+                <div id="div_pesquisadorAvancado">
+                    <img src="../assets/pesquisadorAvançado.png" alt="">
+                </div>
+            </div>
+
+            <div class="div_pioneiro">
+                <img src="../assets/pioneiro.png" alt="">
+                <div id="container_pioneiro">
+                    <div id="div_textoPioneiro">
+                        <h1>PIONEIRO</h1> <br>
+                        <h2>A PARTIR DE 13 ANOS</h2><br><span> Classe para as crianças de 13-14 anos, ondem aprendem a
+                            ser Pioneiro da Mata </span><br>
+                        <h1>AVANÇADA</h1>
+                        <h2>Pioneiro da Mata</h2>
+                    </div>
+                </div>
+                <div id="div_pioneiroAvancado">
+                    <img src="../assets/pioneiroAvançado.png" alt="">
+                </div>
+            </div>
+
+            <div class="div_excursionista">
+                <img src="../assets/excursionista.png" alt="">
+                <div id="container_excursionista">
+                    <div id="div_textoExcursionista">
+                        <h1>EXCURSIONISTA</h1> <br>
+                        <h2>A PARTIR DE 14 ANOS</h2><br><span> Classe para as crianças de 14-15 anos, ondem aprendem a
+                            ser Excursionista da Mata </span><br>
+                        <h1>AVANÇADA</h1>
+                        <h2>Excursionista da Mata</h2>
+                    </div>
+                </div>
+                <div id="div_excursionistaAvancado">
+                    <img src="../assets/excursionistaAvançado.png" alt="">
+                </div>
+            </div>
+
+            <div class="div_guia">
+                <img src="../assets/guia.png" alt="">
+                <div id="container_guia">
+                    <div id="div_textoGuia">
+                        <h1>GUIA</h1> <br>
+                        <h2>A PARTIR DE 15 ANOS</h2><br><span> Classe para as crianças de 15-16 anos, ondem aprendem a
+                            ser Guia do Excursionista </span><br>
+                        <h1>AVANÇADA</h1>
+                        <h2>Guia do Excursionista</h2>
+                    </div>
+                </div>
+                <div id="div_guiaAvancado">
+                    <img src="../assets/guiaAvançado.png" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="historia">
+        <div id="div_historia">
+            <div id="div_criacao">
+                <div id="div_textoCriacao">
+                    <h1 class="amarelo">CRIAÇÃO</h1>
+                    <p>O Clube de Desbravadores, oficializado mundialmente em 1950 pela Associação Geral da Igreja
+                        Adventista do Sétimo Dia, adaptou-se a diferentes culturas, recebendo nomes locais como
+                        "Desbravadores" no Brasil e "Conquistadores" em países de língua espanhola. </p>
+                </div>
+                <div class="seta_criacao"></div>
+                <div id="div_imgCriacao">
+                    <img id="img_criacao" src="../assets/criação.png" alt="">
+                </div>
+            </div>
+            <div id="div_sulAmericano">
+                <div id="div_textoSulAmericano">
+                    <h1 class="amarelo">DIVISÃO SUL AMERICANA</h1>
+                    <p> Em 1955, o primeiro Clube Sul-Americano começou em Lima, Peru, liderado por Nercida e Armando
+                        Ruiz. No segundo ano, o clube peruano conduziu dez Desbravadores ao batismo, marcando o início
+                        de uma parceria evangelística entre os Desbravadores e as classes batismais, tornando os Clubes
+                        uma poderosa ferramenta de evangelização da igreja.</p>
+                </div>
+                <div class="seta_sulAmericano"></div>
+                <div id="div_imgSulAmericano">
+                    <img id="img_sulAmericano" src="../assets/sulAmericano.png" alt="">
+                </div>
+
+            </div>
+            <div id="div_brasil">
+                <div id="div_textoBrasil">
+                    <h1 class="amarelo">BRASIL</h1>
+                    <p>Na década de 1950, o Pastor Jairo T. Araújo, líder da juventude Adventista da Divisão
+                        Sul-Americana, promoveu o desenvolvimento de Clubes de Desbravadores no Brasil, especialmente em
+                        Santa Catarina, São Paulo, Rio de Janeiro e Rio Grande do Sul. Em 1959, surgiram os primeiros
+                        Clubes de Desbravadores no Brasil, em Santa Catarina e São Paulo.</p>
+                </div>
+                <div class="seta_brasil"></div>
+                <div id="div_imgBrasil">
+                    <img id="img_brasil" src="../assets/brasil.png" alt="">
+                </div>
+            </div>
+            <div id="div_campori">
+                <div id="div_textoCampori">
+                    <h1 class="amarelo">CAMPORI</h1>
+                    <p>No mundo, são cerca de 1,5 milhão de jovens em 37 mil clubes, espalhados por 160 países. No
+                        Brasil, há 7.400 unidades, reunindo mais de 258 mil membros. No ano de 2019, tivemos nosso 8
+                        Campori Sul-Americano, “Um Chamado de Coragem”, que reuniu em duas edições, cerca de 60 mil
+                        desbravadores, em Barretos,SP.
+                    </p>
+                </div>
+                <div class="seta_campori"></div>
+                <div id="div_imgCampori">
+                    <img id="img_campori" src="../assets/campori.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="desenvolvedor">
+        <div class="container_desenvolvedor">
+            <div class="anel">
+                <i class="azul"></i>
+                <i class="vermelho"></i>
+                <i class="amarelo"></i>
+
+                <div id="div_imagemDesenvolvedor">
+                    <img src="../assets/desenvolvedora.jpg" alt="">
+                </div>
+            </div>
+            <div id="div_textoDesenvolvedor">
+                <h1><span class="amarelo">DES</span><span class="azul">ENVOL</span><span class="vermelho">VEDORA</span>
+                </h1>
+                <h2>Ellen Chaves, 18 anos</h2>
+                <span>Olá, prazer em te conhecer! Meu nome é Ellen e faço parte do clube de desbravadores a quase 10
+                    anos,
+                    quando entrei tinha 9 anos e participava tanto do clube de Aventureiros (Clube para crianças de 6-9
+                    anos) quanto do clube de Desbravadores (Clube para crianças de 10-15 anos), acabei tendo que
+                    escolher
+                    só um clube e o amor era tão grande que escolhi o Clube de Desbravadores! Atulmente atuo na direção
+                    do clube repassando tudo que eu aprendi, nos cargos de Conselheira da Unidade Raposa (meninas de
+                    12-13
+                    anos) e Instrutura da Classe de Excursionista (crianças de 14 anos ou mais), e com certeza posso
+                    dizer
+                    que o Clube de Desbravadores é uma das coisas mais importantes da minha vida!</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="div_footer">
+            <div id="div_footerLogo">
+                <img src="../assets/Wallpaper_Desbravadores-removebg-preview.png" alt="">
+            </div>
+            <div id="div_footerLado">
+
+                <div id="div_footerContato">
+                    <div id="div_imgFooter">
+                        <a href="https://www.instagram.com/ellencarolinex777/"><img src="../assets/icons8-instagram-50.png"></a>
+                        <a href="mailto:ellencarolinex777@gmail.com"><img src="../assets/icons8-mensagem-50.png"></a>
+                        <a href="https://github.com/yEllenCaroline"><img src="../assets/github_icon.png"></a>
+                        <a href="https://www.linkedin.com/in/ellen-caroline-alves-chaves-875b02248/"><img src="../assets/linkdin_icon.png"></a>
+                    </div>
+                </div>
+                <div id="div_footerLinks">
+                    <h4> <a href="#home">HOME</a> | <a href="#sobre">SOBRE</a> | <a href="#classes">CLASSES</a> | <a href="#historia">HISTÓRIA</a> |
+                        <a href="#desenvolvedor">DESENVOLVEDOR</a></h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

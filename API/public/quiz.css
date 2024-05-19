@@ -1,0 +1,369 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../assets/Untitled\ design.png);
+    background-repeat: repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#section_quiz {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#div_caixa {
+    width: 85vw;
+    height: 80vh;
+    background-color: #05254e;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+}
+
+#div_opcoes {
+    height: 100%;
+    width: 20%;
+    background-color: linear-gradiente black;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#div_logo {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_logo img {
+    height: 100px;
+}
+#div_logo #desbravaja{
+    height: 30px;
+}
+
+#div_botao {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#div_botao button {
+    width: 60%;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    opacity: 0.7;
+    color: white;
+    font-size: 14pt;
+}
+
+#div_saida {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+#div_saida img {
+    height: 40px;
+}
+
+.div_quiz {
+    height: 95%;
+    width: 76.8%;
+    border-radius: 50px;
+    background-size: cover;
+}
+
+#div_conteudo {
+    background-image: url(../assets/maybebackgraund.jpg);
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+#div_questao{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 3vh;
+    padding-left: 3vh;
+    gap: 10px;
+    font-family: "Permanent Marker", cursive;
+}
+#div_numQuestao{
+    width: 5vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20pt;
+    background-color: rgb(103, 103, 205);
+    border-radius: 90% 84% 56% 89%/38% 22% 90% 80%;
+}
+
+#div_questao h2{
+    font-size: 22pt;
+}
+
+#div_escolhas{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vh;
+}
+
+#div_escolhasColuna{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:20vh
+}
+#div_escolhas button{
+    font-family: "Permanent Marker", cursive;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    font-size: 14pt;
+    height: 8vh;
+    width: 18vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#div_escolhas button:hover{
+    transform: scale(1.05);
+}
+
+#div_rodape{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 5vh;
+}
+
+#div_questao1{
+    display: block;
+}
+
+#div_questao2{
+    display: none;
+}
+
+#div_questao3{
+    display: none;
+}
+
+#div_questao4{
+    display: none;
+}
+
+#div_questao5{
+    display: none;
+}
+
+#div_questao6{
+    display: none;
+}
+
+#div_questao7{
+    display: none;
+}
+
+#div_questao8{
+    display: none;
+}
+
+#div_questao9{
+    display: none;
+}
+
+#div_questao10{
+    display: none;
+}
+
+#div_questao11{
+    display: none;
+}
+
+#div_questao12{
+    display: none;
+}
+
+#div_questao13{
+    display: none;
+}
+
+#div_questao14{
+    display: none;
+}
+
+#div_questao15{
+    display: none;
+}
+
+#div_questao16{
+    display: none;
+}
+
+#div_questao17{
+    display: none;
+}
+
+#div_questao18{
+    display: none;
+}
+
+#div_questao19{
+    display: none;
+}
+
+#div_questao20{
+    display: none;
+}
+
+#div_questao21{
+    display: none;
+}
+
+#div_questao22{
+    display: none;
+}
+
+#div_questao23{
+    display: none;
+}
+
+#div_questao24{
+    display: none;
+}
+
+#div_questao25{
+    display: none;
+}
+
+#div_questao26{
+    display: none;
+}
+
+#div_questao27{
+    display: none;
+}
+
+#div_questao28{
+    display: none;
+}
+
+#div_questao29{
+    display: none;
+}
+
+#div_questao30{
+    display: none;
+}
+
+#div_questao31{
+    display: none;
+}
+
+#div_questao32{
+    display: none;
+}
+
+#div_questao33{
+    display: none;
+}
+
+#div_questao34{
+    display: none;
+}
+
+#div_questao35{
+    display: none;
+}
+#div_questao36{
+    display: none;
+}
+#div_questao37{
+    display: none;
+}
+#div_questao38{
+    display: none;
+}
+#div_questao39{
+    display: none;
+}
+
+#div_questao40{
+    display: none;
+}
+
+#div_questao41{
+    display: none;
+}
+
+#div_questao42{
+    display: none;
+}
+
+#div_questao43{
+    display: none;
+}
+
+#div_questao44{
+    display: none;
+}
+
+
+#div_questao45{
+    display: none;
+}
+
+#div_questao46{
+    display: none;
+}
+
+#div_questao47{
+    display: none;
+}
+
+#div_questao48{
+    display: none;
+}
+
+#div_questao49{
+    display: none;
+}
+
+#div_questao50{
+    display: none;
+}

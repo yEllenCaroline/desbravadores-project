@@ -1,0 +1,165 @@
+html {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../assets/Untitled\ design.png);
+  background-repeat: repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.amarelo {
+  color: #fffd44;
+  border-color: #fffd44;
+}
+
+.azul {
+  color: #000dff;
+  border-color: #000dff;
+}
+
+.vermelho {
+  color: #ff0057;
+  border-color: #ff0057;
+}
+
+#section_login {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.caixaLogin{
+  width: 80vw;
+  /* border: solid #000dff; */
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  
+    /* border: 2px solid blue;
+    animation: animacao-borda 5s infinite; Duração de 5 segundos e loop infinito */
+}
+/* @keyframes animacao-borda {
+  0% {
+      border-color: blue;
+  }
+  33% {
+      border-color: red;
+  }
+  66% {
+      border-color: yellow;
+  }
+  100% {
+      border-color: blue;
+  }
+} */
+
+
+
+
+.login {
+  width: 40vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color:#0a1210;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+h2 {
+  font-size: 24pt;
+  color: #fff;
+}
+
+.login .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login .input input {
+  width: 310px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 14pt;
+  color: #fff;
+
+}
+
+.login .input button {
+  width: 50%;
+  height: 40px;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  background: #0078ff;
+
+  border: none;
+  cursor: pointer;
+}
+.login .input button:hover {
+  transform: scale(1.1); /* Aplica escala de 1.1 no botão */
+  transition: transform 0.3s ease; /* Adiciona transição suave */
+}
+
+
+.login .input input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.login .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.login .links a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  padding-left: 19vh;
+}
+
+#div_imglogo{
+  height: 80vh;
+  img{
+    height: 80vh;
+    width: 50vw;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+}
+#div_voltar {
+  position: absolute; /* Alteração necessária */
+  top: 0; /* Alteração necessária */
+  left: 0; /* Alteração necessária */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px; /* Ajuste opcional para adicionar espaçamento */
+  z-index: 999; /* Adicionado para garantir que fique sobreposto */
+}
+
+#div_voltar img {
+  height: 50px;
+}
