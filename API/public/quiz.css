@@ -93,21 +93,98 @@ body {
 #div_saida img {
     height: 40px;
 }
-
 .div_quiz {
     height: 95%;
     width: 76.8%;
     border-radius: 50px;
     background-size: cover;
+    background-image: url(./assets/maybebackgraund.png);
+    background-position: -20px center; /* Ajuste o valor de 20px conforme necessário */
 }
 
 #div_conteudo {
-    background-image: url(../assets/maybebackgraund.jpg);
     height: 100%;
     width: 100%;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
+}
+
+#div_questaoError{
+    display: none;
+}
+
+#div_conteudoError{
+    height: 100%;
+    width: 100%;
+    background-image: url(./assets/quiz-error.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_quizError{
+    margin-top: 30vh;
+}
+
+#div_quizError button{
+    margin-bottom: 5vh;
+    font-family: "Permanent Marker", cursive;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    font-size: 14pt;
+    height: 8vh;
+    width: 18vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#div_quizError button:hover{
+    transform: scale(1.05);
+}
+
+
+
+#div_conteudoInicioQuiz{
+    height: 100%;
+    width: 100%;
+    background-image: url(./assets/lençoPordoSol.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_conteudoInicioQuiz img{
+    padding-top: 15vh;
+    height: 10vh;
+}
+
+#div_inicioQuiz{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+#div_inicioQuiz button {
+    margin-bottom: 5vh;
+    font-family: "Permanent Marker", cursive;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    font-size: 14pt;
+    height: 8vh;
+    width: 18vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#div_inicioQuiz button:hover{
+    transform: scale(1.05);
 }
 
 #div_questao{
@@ -144,11 +221,12 @@ body {
 }
 
 #div_escolhasColuna{
+    /* margin-left: 50px; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:20vh
+    gap:30vh
 }
 #div_escolhas button{
     font-family: "Permanent Marker", cursive;
@@ -171,8 +249,10 @@ body {
     padding-right: 5vh;
 }
 
+
+
 #div_questao1{
-    display: block;
+    display: none;
 }
 
 #div_questao2{

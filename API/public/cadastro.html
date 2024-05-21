@@ -10,7 +10,6 @@
     rel="stylesheet">
     <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
   <link rel="stylesheet" href="cadastro.css">
-  <script src="./js/sessao.js"></script>
 
 
   <title>Cadastro</title>
@@ -112,6 +111,7 @@
           finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
+          alert("Este usuário ja existe!")
         }
       })
       .catch(function (resposta) {

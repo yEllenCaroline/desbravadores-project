@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" <link
+        rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <title>Document</title>
     <link rel="stylesheet" href="quiz.css">
@@ -32,11 +31,28 @@
                     <img src="../assets/icone_casa.png" alt="">
                 </div>
             </div>
-            <!-- <div id="div_quiz">
-                <div id="div_conteudo">
-                   
+
+            <div id="div_questaoError" class="div_quiz">
+                <div id="div_conteudoError">
+                    <div id="div_quizError">
+                        <button onclick="tentarNovamente()">TENTAR NOVAMENTE</button>
+                    </div>
                 </div>
-            </div> -->
+            </div>
+
+            <div id="div_questao0" class="div_quiz">
+                <div id="div_conteudoInicioQuiz">
+
+                    <img src="./assets/desbravaJá.png" alt="">
+                    <div id="div_inicioQuiz">
+                        <button onclick="iniciar()">INICIAR</button>
+                        <button onclick="">COMO FUNCIONA?</button>
+                        <button onclick="">CRÉDITOS</button>
+                    </div>
+                </div>
+            </div>
+
+
             <div id="div_questao1" class="div_quiz">
                 <div id="div_conteudo">
                     <div id="div_questao">
@@ -47,12 +63,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="acertar()">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="acertar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">NÓ CATAU</button>
+                            <button onclick="errar()">NÓ ESQUERDO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -72,11 +88,11 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">10 ANOS</button>
-                            <button onclick="">15 ANOS</button>   
+                            <button onclick="errar()">10 ANOS</button>
+                            <button onclick="errar()">15 ANOS</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">13 ANOS</button>
+                            <button onclick="errar()">13 ANOS</button>
                             <button onclick="acertar()">14 ANOS</button>
                         </div>
                     </div>
@@ -97,11 +113,11 @@
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
                             <button onclick="acertar()">LEALDADE, SANGUE, EXELÊNCIA E PUREZA</button>
-                            <button onclick="">AMOR AOS IDEAIS</button>   
+                            <button onclick="errar()">AMOR AOS IDEAIS</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">LEALDADE, AMOR, PUREZA, EXELÊNCIA</button>
-                            <button onclick="">PAI, FILHO E ESPIRITO SANTO</button>
+                            <button onclick="errar()">LEALDADE, AMOR, PUREZA, EXELÊNCIA</button>
+                            <button onclick="errar()">PAI, FILHO E ESPIRITO SANTO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -121,12 +137,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">A TERCEIRA GUERRA MUNDIAL</button>
-                            <button onclick="">ESPECIALIDADE DE ESPARTA</button>   
+                            <button onclick="errar()">A TERCEIRA GUERRA MUNDIAL</button>
+                            <button onclick="errar()">ESPECIALIDADE DE ESPARTA</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button onclick="acertar()">FÉ E A BIBLIA</button>
-                            <button onclick="">A TRINDADE</button>
+                            <button onclick="errar()">A TRINDADE</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -134,7 +150,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div id="div_questao5" class="div_quiz">
                 <div id="div_conteudo">
                     <div id="div_questao">
@@ -145,12 +161,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">Fred Johnson, Carro</button>
-                            <button onclick="">Henry Berg, Casa</button>   
+                            <button onclick="errar()">Fred Johnson, Carro</button>
+                            <button onclick="errar()">Henry Berg, Casa</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button onclick="acertar()">Henry Berg, Carro</button>
-                            <button onclick="">Ruy Martins, Igreja</button>
+                            <button onclick="errar()">Ruy Martins, Igreja</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -169,12 +185,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">Hellen Chaves</button>
-                            <button onclick="">Ellen Chavez</button>   
+                            <button onclick="errar()">Hellen Chaves</button>
+                            <button onclick="errar()">Ellen Chavez</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button onclick="acertar()">Ellen Chaves</button>
-                            <button onclick="">Eren Yeager</button>
+                            <button onclick="errar()">Eren Yeager</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -193,11 +209,11 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">J. JACOBO</button>
-                            <button onclick="">ELLEN G. WHITE</button>   
+                            <button onclick="errar()">J. JACOBO</button>
+                            <button onclick="errar()">ELLEN G. WHITE</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">BARRICK GANDY</button>
+                            <button onclick="errar()">BARRICK GANDY</button>
                             <button onclick="acertar()">HENRY BERG</button>
                         </div>
                     </div>
@@ -217,12 +233,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">LEMA</button>
-                            <button onclick="acertar()">OBJETIVO</button>   
+                            <button onclick="errar()">LEMA</button>
+                            <button onclick="acertar()">OBJETIVO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">ALVO</button>
-                            <button onclick="">LEI</button>
+                            <button onclick="errar()">ALVO</button>
+                            <button onclick="errar()">LEI</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -237,20 +253,21 @@
                         <div id="div_numQuestao">
                             9.
                         </div>
-                        <h2>Qual das alternativas é uma classe dos Desbravadores?/h2>
+                        <h2>Qual das alternativas é uma classe dos Desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">AMIGO</button>
-                            <button onclick="">GUIA</button>   
+                            <button onclick="errar()">AMIGO</button>
+                            <button onclick="errar()">GUIA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">COMPANHEIRO</button>
-                            <button onclick="">PESQUISADOR</button>
+                            <button onclick="errar()">COMPANHEIRO</button>
+                            <button onclick="errar()">PESQUISADOR</button>
                         </div>
                     </div>
                     <div id="div_rodape">
-                        <h4><span onclick="acertar()" style="cursor: pointer;">Todos</span> os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                        <h4><span onclick="acertar()" style="cursor: pointer;">Todos</span> os Direitos foram reservados
+                            © Ellen Chaves, 2024</h4>
                     </div>
                 </div>
             </div>
@@ -265,11 +282,11 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">OBSERVAR A DEVOÇÃO MATINAL</button>
-                            <button onclick="">TER SEMPRE UM CANTICO NO CORAÇÃO</button>   
+                            <button onclick="errar()">OBSERVAR A DEVOÇÃO MATINAL</button>
+                            <button onclick="errar()">TER SEMPRE UM CANTICO NO CORAÇÃO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">IR A ONDE DEUS MANDAR</button>
+                            <button onclick="errar()">IR A ONDE DEUS MANDAR</button>
                             <button onclick="acertar()">MANTER A CONSCIÊNCIA LIMPA</button>
                         </div>
                     </div>
@@ -289,11 +306,11 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">LEAL E BONDOSO</button>
-                            <button onclick="">SERVE DE DEUS E AMIGO DE TODOS</button>   
+                            <button onclick="errar()">LEAL E BONDOSO</button>
+                            <button onclick="errar()">SERVE DE DEUS E AMIGO DE TODOS</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">AMIGO E FIEL</button>
+                            <button onclick="errar()">AMIGO E FIEL</button>
                             <button onclick="acertar()">BONDOSO E LEAL</button>
                         </div>
                     </div>
@@ -314,11 +331,11 @@
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
                             <button onclick="acertar()">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ CATAU</button>
-                            <button onclick="">NÓ ESQUERDO</button>
+                            <button onclick="errar()">NÓ CATAU</button>
+                            <button onclick="errar()">NÓ ESQUERDO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -337,8 +354,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">A MENSAGEM DO ADVENTO A TODO O MUNDO...</button>
-                            <button onclick="">SALVAR DO PECADO</button>   
+                            <button onclick="acertar()">A MENSAGEM DO ADVENTO A TODO O MUNDO...</button>
+                            <button onclick="errar()">SALVAR DO PECADO</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>O AMOR DE CRISTO ME MOTIVA</button>
@@ -361,12 +378,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">AMAR, AGUARDAR, APRESSAR E ANUNCIAR</button>
-                            <button onclick="">AGUARDAR, ANUNCIAR AMAR E APRESSAR</button>   
+                            <button onclick="errar()">AMAR, AGUARDAR, APRESSAR E ANUNCIAR</button>
+                            <button onclick="errar()">AGUARDAR, ANUNCIAR AMAR E APRESSAR</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button onclick="acertar()">AMAR, ANUNCIAR, APRESSAR E AGUARDAR</button>
-                            <button onclick="">ANUNCIAR, AMAR, GUARDAR E APRESSAR</button>
+                            <button onclick="errar()">ANUNCIAR, AMAR, GUARDAR E APRESSAR</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -385,12 +402,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">A BIBLIA, FÉ, PROFECIA</button>
-                            <button onclick="acertar()">DEUS PAI, FILHO E ESPIRITO SANTO</button>   
+                            <button onclick="errar()">A BIBLIA, FÉ, PROFECIA</button>
+                            <button onclick="acertar()">DEUS PAI, FILHO E ESPIRITO SANTO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">AS 3 PRIMEIRAS CLASSES</button>
-                            <button onclick="">OS 3 PRINCIPAIS NÓS</button>
+                            <button onclick="errar()">AS 3 PRIMEIRAS CLASSES</button>
+                            <button onclick="errar()">OS 3 PRINCIPAIS NÓS</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -409,12 +426,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">O AMOR</button>
-                            <button onclick="acertar()">O SANGUE DE CRISTO</button>   
+                            <button onclick="errar()">O AMOR</button>
+                            <button onclick="acertar()">O SANGUE DE CRISTO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">SANGUE DOS DESBRAVADORES</button>
-                            <button onclick="">MAÇÃ</button>
+                            <button onclick="errar()">SANGUE DOS DESBRAVADORES</button>
+                            <button onclick="errar()">MAÇÃ</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -433,12 +450,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">PAZ</button>
-                            <button onclick="">ANO NOVO</button>   
+                            <button onclick="errar()">PAZ</button>
+                            <button onclick="errar()">ANO NOVO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>AMOR</button>
-                            <button>PUREZA</button>
+                            <button onclick="errar()">AMOR</button>
+                            <button onclick="acertar()">PUREZA</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -457,8 +474,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">INSTRUTOR DO CLUBE</button>
-                            <button onclick="">CAPITÃO</button>   
+                            <button onclick="errar()">INSTRUTOR DO CLUBE</button>
+                            <button onclick="acertar()">CAPITÃO</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>CONSELHEIRO</button>
@@ -481,12 +498,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">SÓ PODE SER ULTILIZADO POR ALGUEM INVESTIDO</button>
-                            <button onclick="">CADA UNIFORME É FEITO POR CADA CLUBE</button>   
+                            <button onclick="acertar()">SÓ PODE SER ULTILIZADO POR ALGUEM INVESTIDO</button>
+                            <button onclick="errar()">CADA UNIFORME É FEITO POR CADA CLUBE</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">SÓ É ULTILIZADO NA INVESTIDURA</button>
-                            <button onclick="">TODOS OS UNIFORMES SÃO IGUAIS</button>
+                            <button onclick="errar()">SÓ É ULTILIZADO NA INVESTIDURA</button>
+                            <button onclick="errar()">TODOS OS UNIFORMES SÃO IGUAIS</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -505,12 +522,12 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">COMPLETÃO</button>
-                            <button onclick="acertar()">AGRUPADAS</button>   
+                            <button onclick="errar()">COMPLETÃO</button>
+                            <button onclick="acertar()">AGRUPADAS</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">LIDER</button>
-                            <button onclick="">PIONEIRO</button>
+                            <button onclick="errar()">LIDER</button>
+                            <button onclick="errar()">PIONEIRO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -529,11 +546,11 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ AZELHA</button>
-                            <button onclick="">NÓ FORCA</button>   
+                            <button onclick="errar()">NÓ AZELHA</button>
+                            <button onclick="errar()">NÓ FORCA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ CATAU</button>
+                            <button onclick="errar()">NÓ CATAU</button>
                             <button onclick="acertar()">LAIS DE GUIA</button>
                         </div>
                     </div>
@@ -549,16 +566,16 @@
                         <div id="div_numQuestao">
                             22.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Em que ano o primeiro clube do Brasil foi fundado?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">1945</button>
+                            <button onclick="errar()">1950</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">1930</button>
+                            <button onclick="errar()">1970</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -573,16 +590,16 @@
                         <div id="div_numQuestao">
                             23.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Em que ano foram redigidos o Voto, a Lei e o Lema?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">1923</button>
+                            <button onclick="acertar()">1921</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">1918</button>
+                            <button onclick="errar()">1925</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -597,16 +614,16 @@
                         <div id="div_numQuestao">
                             24.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Em que ano foi desenhado o emblema dos desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">1938</button>
+                            <button onclick="errar()">1940</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">1944</button>
+                            <button onclick="acertar()">1946</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -621,16 +638,16 @@
                         <div id="div_numQuestao">
                             25.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual a sexta frase do hino dos desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">FÍES AS SUAS LEIS</button>
+                            <button onclick="acertar()">AS NOVAS DA SALVAÇÃO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">DAR O GALARDÃO</button>
+                            <button onclick="errar()">NÓS SOMOS OS DESBRAVADORES</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -645,16 +662,16 @@
                         <div id="div_numQuestao">
                             26.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>O que significa o triangulo invertido?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="acertar()">IR NA CONTRAMÃO DO MUNDO</button>
+                            <button onclick="errar()">AS PIRÂMIDES DO EGITO ANTIGO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">OS ULTIMOS EM PRIMEIRO LUGAR</button>
+                            <button onclick="errar()">O BRASÃO DOS DESBRAVADORES</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -669,16 +686,16 @@
                         <div id="div_numQuestao">
                             27.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Com o que os Desbravadores são confundidos?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">EXÉRCITO</button>
+                            <button onclick="errar()">AÉRONAUTICA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">MARINHA</button>
+                            <button onclick="acertar()">ESCOTEIROS</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -693,16 +710,16 @@
                         <div id="div_numQuestao">
                             28.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>A partir de quantos anos se pode ser membro da Diretoria?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">18</button>
+                            <button onclick="errar()">15</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">21</button>
+                            <button onclick="acertar()">16</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -717,16 +734,16 @@
                         <div id="div_numQuestao">
                             29.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual a primeira classe?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="acertar()">AMIGO</button>
+                            <button onclick="errar()">GUIA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">COMPANHEIRO</button>
+                            <button onclick="errar()">EXCURSIONISTA</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -741,16 +758,17 @@
                         <div id="div_numQuestao">
                             30.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>qual o nome desta especialidade?</h2>
+                        <img style="margin-top: -30px;" src="./assets/especialidade_ordem_unida.png" alt="" height="200px">
                     </div>
                     <div id="div_escolhas">
-                        <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                        <div id="div_escolhasColuna" style="margin-top: -39px;">
+                            <button onclick="errar()">CONHECIMENTO MILITAR</button>
+                            <button onclick="acertar()">ORDEM UNIDA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button>ATIVIDADES CÍVICAS</button>
+                            <button>CULTURA FÍSICA</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -769,8 +787,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -793,8 +811,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -817,8 +835,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -841,8 +859,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -865,8 +883,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -889,8 +907,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -913,8 +931,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -937,8 +955,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -961,8 +979,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -985,8 +1003,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1009,8 +1027,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1033,8 +1051,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1057,8 +1075,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1082,8 +1100,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1106,8 +1124,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1130,8 +1148,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1154,8 +1172,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1178,8 +1196,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1202,8 +1220,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1226,8 +1244,8 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="">NÓ DIREITO</button>
-                            <button onclick="">NÓ VOLTA DO FIEL</button>   
+                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button>NÓ CATAU</button>
@@ -1238,7 +1256,7 @@
                         <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
                     </div>
                 </div>
-            </div> 
+            </div>
 
 
         </div>
@@ -1249,17 +1267,22 @@
     var num_questao_atual = 1;
     var num_questao_anterior = 1;
 
+
     function acertar() {
         num_questao_atual++;
         num_questao_anterior = num_questao_atual - 1;
         var guardar_anterior_questao = 'div_questao' + num_questao_anterior;
         var guardar_proxima_questao = 'div_questao' + num_questao_atual;
-        
-        var anterior_questao = document.getElementById(guardar_anterior_questao)
+
+        var anterior_questao = document.getElementById(guardar_anterior_questao);
         var proxima_questao = document.getElementById(guardar_proxima_questao);
 
+        // Verifica se é a questão 0 pois nela não se adiciona ponto
+        if (num_questao_atual === 0) {
+            cont += 0;
+        }
         // Verifica se é uma questão que adiciona 5 pontos
-        if (num_questao_atual === 10 || num_questao_atual === 20 || num_questao_atual === 30 || num_questao_atual === 40 || num_questao_atual === 50) {
+        else if (num_questao_atual === 10 || num_questao_atual === 20 || num_questao_atual === 30 || num_questao_atual === 40 || num_questao_atual === 50) {
             cont += 5;
         }
         // Verifica se é uma questão que adiciona 3 pontos
@@ -1275,6 +1298,27 @@
 
         // Exibe a próxima questão
         proxima_questao.style.display = 'block';
+
+        console.log(cont)
+    }
+
+    function tentarNovamente(){
+        div_questao0.style.display = 'block'
+        div_questaoError.style.display = 'none'
+    }
+
+    function iniciar() {
+        div_questao0.style.display = 'none';
+        div_questao1.style.display = 'block'
+    }
+
+    function errar(){
+        var guardar_questao_errada = 'div_questao' + num_questao_atual;
+        var questao_atual_errada = document.getElementById(guardar_questao_errada)
+        questao_atual_errada.style.display = 'none'
+        div_questaoError.style.display = 'block'
+        console.log(questao_atual_errada)
+        num_questao_atual = 1
     }
 </script>
 
