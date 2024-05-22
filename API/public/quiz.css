@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-image: url(../assets/Untitled\ design.png);
+    background-image: url(./assets/Untitled\ design.png);
     background-repeat: repeat;
     background-size: contain;
     display: flex;
@@ -60,6 +60,12 @@ body {
 }
 #div_logo #desbravaja{
     height: 30px;
+}
+
+#div_hello{
+    display: flex;
+    justify-content: center;
+    color: #bbbe25;
 }
 
 #div_botao {

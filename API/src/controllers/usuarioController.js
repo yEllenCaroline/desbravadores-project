@@ -45,6 +45,29 @@ function autenticar(req, res) {
 
 }
 
+function cadastrarQuiz(req, res) {
+    var tempo = req.body.tempoServer;
+    var pontuacao = req.body.pontuacaoServer;
+
+     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+     usuarioModel.cadastrarQuiz(tempo,pontuacao)
+     .then(
+         function (resultado) {
+             res.json(resultado);
+         }
+     ).catch(
+         function (erro) {
+             console.log(erro);
+             console.log(
+                 "\nHouve um erro ao realizar o cadastro do quiz! Erro: ",
+                 erro.sqlMessage
+             );
+             res.status(500).json(erro.sqlMessage);
+         }
+     );
+
+}
+
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -81,5 +104,6 @@ function cadastrar(req, res) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarQuiz
 }

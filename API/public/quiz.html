@@ -20,15 +20,20 @@
         <div id="div_caixa">
             <div id="div_opcoes">
                 <div id="div_logo">
-                    <img src="../assets/Wallpaper_Desbravadores-removebg-preview.png" alt="">
+                    <img src="./assets/Wallpaper_Desbravadores-removebg-preview.png" alt="">
                     <img id="desbravaja" src="./assets/Novo_Projeto-removebg-preview.png" alt="">
                 </div>
+
+                <div id="div_hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+
                 <div id="div_botao">
                     <button>Jogo</button>
                     <button>Estatísticas</button>
                 </div>
                 <div id="div_saida">
-                    <img src="../assets/icone_casa.png" alt="">
+                    <img src="./assets/icone_casa.png" alt="">
                 </div>
             </div>
 
@@ -759,7 +764,8 @@
                             30.
                         </div>
                         <h2>qual o nome desta especialidade?</h2>
-                        <img style="margin-top: -30px;" src="./assets/especialidade_ordem_unida.png" alt="" height="200px">
+                        <img style="margin-top: -30px;" src="./assets/especialidade_ordem_unida.png" alt=""
+                            height="200px">
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna" style="margin-top: -39px;">
@@ -767,8 +773,8 @@
                             <button onclick="acertar()">ORDEM UNIDA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>ATIVIDADES CÍVICAS</button>
-                            <button>CULTURA FÍSICA</button>
+                            <button onclick="errar()">ATIVIDADES CÍVICAS</button>
+                            <button onclick="errar()">CULTURA FÍSICA</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1263,10 +1269,25 @@
     </section>
 </body>
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    var idUsuario = sessionStorage.ID_USUARIO;
+
     var cont = 0;
     var num_questao_atual = 1;
     var num_questao_anterior = 1;
 
+    var timer;
+    var startTime;
+    var elapsedTime = 0;
+    var tempoDeJogo = 0;
+
+    function formatTime(ms) {
+        const totalSeconds = Math.floor(ms / 1000);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
 
     function acertar() {
         num_questao_atual++;
@@ -1280,18 +1301,8 @@
         // Verifica se é a questão 0 pois nela não se adiciona ponto
         if (num_questao_atual === 0) {
             cont += 0;
-        }
-        // Verifica se é uma questão que adiciona 5 pontos
-        else if (num_questao_atual === 10 || num_questao_atual === 20 || num_questao_atual === 30 || num_questao_atual === 40 || num_questao_atual === 50) {
-            cont += 5;
-        }
-        // Verifica se é uma questão que adiciona 3 pontos
-        else if (num_questao_atual === 3 || num_questao_atual === 7 || num_questao_atual === 13 || num_questao_atual === 17 || num_questao_atual === 23 || num_questao_atual === 27 || num_questao_atual === 33 || num_questao_atual === 37 || num_questao_atual === 43 || num_questao_atual === 47) {
-            cont += 3;
-        }
-        // Se não, adiciona 1 ponto
-        else {
-            cont += 1;
+        } else{
+            cont += 10;
         }
         // Bloqueia a questão anterior
         anterior_questao.style.display = 'none';
@@ -1302,24 +1313,96 @@
         console.log(cont)
     }
 
-    function tentarNovamente(){
+    function tentarNovamente() {
         div_questao0.style.display = 'block'
         div_questaoError.style.display = 'none'
     }
 
     function iniciar() {
+        
         div_questao0.style.display = 'none';
         div_questao1.style.display = 'block'
+        startTime = Date.now() - elapsedTime;
+        timer = setInterval(() => {
+            elapsedTime = Date.now() - startTime;
+        }, 1000);
     }
 
-    function errar(){
+    function errar() {
         var guardar_questao_errada = 'div_questao' + num_questao_atual;
         var questao_atual_errada = document.getElementById(guardar_questao_errada)
         questao_atual_errada.style.display = 'none'
         div_questaoError.style.display = 'block'
         console.log(questao_atual_errada)
         num_questao_atual = 1
-    }
+
+        clearInterval(timer);
+        tempoDeJogo = elapsedTime;
+        console.log('Tempo de jogo:', formatTime(tempoDeJogo));
+        var tempoFormatado = formatTime(tempoDeJogo)
+        // Aqui você pode adicionar a lógica para parar o quiz e enviar o tempo para o banco de dados
+        // Exemplo de como enviar o tempo para o banco de dados:
+        // enviarTempoParaBancoDeDados(tempoDeJogo);
+
+
+
+          // Enviando o valor da nova input
+    fetch("/usuarios/cadastrarQuiz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        pontuacaoServer: cont,
+        
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrarQuiz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        
+        usuarioServer: idUsuario,
+        // quizServer:  ,
+        questaoServer: questao_atual_errada,
+        tempoServer: tempoFormatado,
+        
+        
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+
+    cont = 0
+  }
+
+    
+
 </script>
 
 
