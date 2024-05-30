@@ -29,7 +29,7 @@ CREATE TABLE MetricasQuiz (
     fkUsuario INT,
     fkQuestao INT,
     erros INT,
-    acertos INT,
+    -- acertos INT,
     pontos INT,
     CONSTRAINT pkComposta PRIMARY KEY (fkUsuario, fkQuestao, idMetricas),
     CONSTRAINT fkQuiz FOREIGN KEY (fkQuiz) REFERENCES Quiz(idQuiz),

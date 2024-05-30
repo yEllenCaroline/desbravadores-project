@@ -1,6 +1,8 @@
 var usuarioModel = require("../models/usuarioModel");
 var aquarioModel = require("../models/aquarioModel");
 
+let usuario = '';
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -18,15 +20,16 @@ function autenticar(req, res) {
                     console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
 
                     if (resultadoAutenticar.length == 1) {
+                        usuario = resultadoAutenticar[0].idUsuario
                         console.log(resultadoAutenticar);
-
-                                    res.json({
-                                        id: resultadoAutenticar[0].id,
+                        
+                        res.json({
+                                        idUsuario: resultadoAutenticar[0].idUsuario,
                                         email: resultadoAutenticar[0].email,
                                         nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha
-                                
-                                                                       });
+                                        senha: resultadoAutenticar[0].senha,
+                                        
+                                    });
                             
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
@@ -45,12 +48,38 @@ function autenticar(req, res) {
 
 }
 
-function cadastrarQuiz(req, res) {
+// function cadastrarQuiz(req, res) {
+
+//      // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+//      usuarioModel.cadastrarQuiz(pontuacao)
+//      .then(
+//          function (resultado) {
+//              res.json(resultado);
+//          }
+//      ).catch(
+//          function (erro) {
+//              console.log(erro);
+//              console.log(
+//                  "\nHouve um erro ao realizar o cadastro do quiz! Erro: ",
+//                  erro.sqlMessage
+//              );
+//              res.status(500).json(erro.sqlMessage);
+//          }
+//      );
+
+// }
+
+function cadastrarMetricasQuiz(req, res) {
+    var usuario = req.body.usuarioServer;
+    var questao = req.body.questaoServer;
+    var pontuacao = req.body.pontuacaoServer;   
     var tempo = req.body.tempoServer;
-    var pontuacao = req.body.pontuacaoServer;
+    var rank = req.body.rankServer;
+    // var quiz = req.body.quizServer
+    
 
      // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-     usuarioModel.cadastrarQuiz(tempo,pontuacao)
+     usuarioModel.cadastrarMetricasQuiz(usuario,questao,pontuacao,tempo,rank)
      .then(
          function (resultado) {
              res.json(resultado);
@@ -59,7 +88,7 @@ function cadastrarQuiz(req, res) {
          function (erro) {
              console.log(erro);
              console.log(
-                 "\nHouve um erro ao realizar o cadastro do quiz! Erro: ",
+                 "\nHouve um erro ao realizar o cadastro das metricas do quiz! Erro: ",
                  erro.sqlMessage
              );
              res.status(500).json(erro.sqlMessage);
@@ -102,8 +131,31 @@ function cadastrar(req, res) {
     }
 }
 
+function listar(req, res) {
+
+    usuarioModel.listar().then(function (resultado) {
+        res.status(200).json(resultado);
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function listarKpi(req, res) {
+    console.log(usuario)
+
+    usuarioModel.listarKpi(usuario)
+    .then(function (resultado) {
+        res.status(200).json(resultado);
+    }).catch(function (erro) {
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarQuiz
+    cadastrarMetricasQuiz,
+    listar,
+    listarKpi,
 }

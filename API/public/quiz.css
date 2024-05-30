@@ -193,6 +193,66 @@ body {
     transform: scale(1.05);
 }
 
+#div_conteudoFim{
+    font-family: "Permanent Marker", cursive;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10vh; */
+}
+
+#div_conteudoFim h1{
+    font-size: 56pt;
+    color: #0fd454;
+}
+
+#div_conteudoFim h2{
+    padding-bottom: 25vh;
+    font-size: 30pt;
+}
+
+#div_conteudoFim h3{
+    font-weight: lighter;
+}
+
+#div_contato{
+    gap: 10px;
+    margin-top: -10vh;
+    display: flex;
+    align-items: center;
+}
+#div_contato img{
+    height: 40px;
+}
+
+#div_tryagain{
+    cursor: pointer;
+    margin-top: -20px;
+    margin-left: 30px;
+    transform: rotate(-20deg);
+    height: 8vh;
+    width: 15vw;
+    border-radius: 90% 84% 56% 89%/38% 22% 90% 80%;
+    background-color:#05254e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#div_quizFim{
+    display: flex;
+    flex-direction: row;
+}
+
+#div_contato{
+    display: flex;
+    flex-direction: row;
+}
+
 #div_questao{
     display: flex;
     flex-direction: row;
@@ -256,6 +316,141 @@ body {
 }
 
 
+#div_conteudoDash{
+    font-family: "Permanent Marker", cursive;
+    color: black;
+    font-weight: lighter;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#div_rank{
+    font-family: "Permanent Marker", cursive;
+    color: black;
+    font-weight: lighter;
+    font-size: 100pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_kpiDash{
+    height: 50%;
+    width: 30%;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#div_rankDash{
+    height: 80%;
+    width: 50%;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+/* Cor da barra de rolagem */
+::-webkit-scrollbar-thumb {
+    background-color: #AEA61E; /* Cor do preenchimento da barra de rolagem */
+    border-radius: 10px;
+    width: 8px;
+    padding: 5px; /* Adicionando um espaço de 5px à direita */
+}
+
+/* Cor do fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background-color: #07203C; /* Cor do fundo da barra de rolagem */
+}
+
+#div_posicao{
+    width: 20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#div_resultadoPosicao{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#div_nome{
+    width: 40%;
+
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+#div_resultadoNome{
+    display: flex;
+    flex-direction: column;
+}
+
+#div_pontuacao{
+    width: 20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#div_resultadoPontuacao{
+    display: flex;
+    flex-direction: column;
+}
+
+#div_tempo{
+    width: 20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#div_resultadoTempo{
+    display: flex;
+    flex-direction: column;
+}
+
+#div_colunas{
+    gap: 20px;
+    font-size: 8pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+#div_colunas span{
+    font-size: 12pt;
+    border-bottom: solid black;
+}
+
+#div_dashboard{
+    display: none;
+}
+
+/* #div_questao0{
+    display: none;
+} */
 
 #div_questao1{
     display: none;
@@ -451,5 +646,9 @@ body {
 }
 
 #div_questao50{
+    display: none;
+}
+
+#div_questao51{
     display: none;
 }

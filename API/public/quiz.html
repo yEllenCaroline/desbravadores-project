@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="quiz.css">
 </head>
 
-<body>
+<body onload="listar(),listarKpi()">
     <section id="section_quiz">
         <div id="div_caixa">
             <div id="div_opcoes">
@@ -29,11 +29,11 @@
                 </div>
 
                 <div id="div_botao">
-                    <button>Jogo</button>
-                    <button>Estatísticas</button>
+                    <button onclick="jogo()">Jogo</button>
+                    <button onclick="estatisticas()">Estatísticas</button>
                 </div>
                 <div id="div_saida">
-                    <img src="./assets/icone_casa.png" alt="">
+                    <a href="./index.html"><img src="./assets/icone_casa.png" alt=""></a>
                 </div>
             </div>
 
@@ -51,8 +51,8 @@
                     <img src="./assets/desbravaJá.png" alt="">
                     <div id="div_inicioQuiz">
                         <button onclick="iniciar()">INICIAR</button>
-                        <button onclick="">COMO FUNCIONA?</button>
-                        <button onclick="">CRÉDITOS</button>
+                        <button onclick="funcionar()">COMO FUNCIONA?</button>
+                        <button onclick="creditos()">CRÉDITOS</button>
                     </div>
                 </div>
             </div>
@@ -329,18 +329,18 @@
                 <div id="div_conteudo">
                     <div id="div_questao">
                         <div id="div_numQuestao">
-                            12.
+                            <span onclick="acertar()" style="cursor: pointer;">12.</span>
                         </div>
-                        <h2>Qual nó é ultilizado para finalizar uma amarra?</h2>
+                        <h2>Quantas especialidas existem de 'Habilidades Domésticas'?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="acertar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">19</button>
+                            <button onclick="errar()">8</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ CATAU</button>
-                            <button onclick="errar()">NÓ ESQUERDO</button>
+                            <button onclick="errar()">10</button>
+                            <button onclick="errar()">13</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -764,8 +764,7 @@
                             30.
                         </div>
                         <h2>qual o nome desta especialidade?</h2>
-                        <img style="margin-top: -30px;" src="./assets/especialidade_ordem_unida.png" alt=""
-                            height="200px">
+                        <img style="margin-top: -30px;" src="./assets/ordem_unida.png " alt="" height="200px">
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna" style="margin-top: -39px;">
@@ -789,16 +788,16 @@
                         <div id="div_numQuestao">
                             31.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual foi o ano do primeiro campori em São Paulo?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">1980</button>
+                            <button onclick="acertar()">1970</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">1950</button>
+                            <button onclick="errar()">1960</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -813,16 +812,16 @@
                         <div id="div_numQuestao">
                             32.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>O Clube de Desbravadores é destinado a crianças apartir de:</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="acertar()">10 ANOS</button>
+                            <button onclick="errar()">12 ANOS</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">9 ANOS</button>
+                            <button onclick="errar()">16 ANOS</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -837,16 +836,16 @@
                         <div id="div_numQuestao">
                             33.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Como é Desbravadores em Espanhol?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">DESBRAVADORES</button>
+                            <button onclick="acertar()">CONQUISTADORES</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">EXPLORADORES</button>
+                            <button onclick="errar()">DESCOBRIDORES</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -861,16 +860,16 @@
                         <div id="div_numQuestao">
                             34.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Em qual ano ocorreu o Grande Desapontamento?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="acertar()">1844</button>
+                            <button onclick="errar()">2000</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">1988</button>
+                            <button onclick="errar()">1900</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -885,16 +884,16 @@
                         <div id="div_numQuestao">
                             35.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual o nome da primeira classe para maiores de 18 anos?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">GUIA</button>
+                            <button onclick="errar()">LIDER MASTER</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">LIDER</button>
+                            <button onclick="errar()">CONSELHEIRO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -909,16 +908,16 @@
                         <div id="div_numQuestao">
                             36.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual nó é ultilizado para finalizar uma amarra?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
+                            <button onclick="acertar()">NÓ DIREITO</button>
                             <button onclick="errar()">NÓ VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">NÓ CATAU</button>
+                            <button onclick="errar()">NÓ ESQUERDO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -933,16 +932,16 @@
                         <div id="div_numQuestao">
                             37.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual emblema é ultilizado no lenço dos desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">D1</button>
+                            <button onclick="acertar()">D2</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">D3</button>
+                            <button onclick="errar()">D4</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -957,16 +956,16 @@
                         <div id="div_numQuestao">
                             38.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual nome da ultima classe para membros da diretoria?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">DESBRAVADOR MASTER</button>
+                            <button onclick="errar()">LIDER AVANÇADO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">LIDER MASTER AVANÇADO</button>
+                            <button onclick="errar()">GUIA MEGA MASTER</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -981,20 +980,21 @@
                         <div id="div_numQuestao">
                             39.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Vamos ver se vc lembra... qual nó finaliza uma amarra mesmo?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">AZELHA</button>
+                            <button onclick="errar()">VOLTA DO FIEL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">CATAU</button>
+                            <button onclick="errar()">ESQUERDO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
-                        <h4>Todos os Direitos foram reservados © Ellen Chaves, 2024</h4>
+                        <h4>Todos os <span onclick="acertar()" style="cursor: pointer;">Direito</span>s foram reservados
+                            © Ellen Chaves, 2024</h4>
                     </div>
                 </div>
             </div>
@@ -1005,16 +1005,16 @@
                         <div id="div_numQuestao">
                             40.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual desbravador ficou famoso por ir a guerra sem arma?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">FREDERICK BOSTON</button>
+                            <button onclick="acertar()">DESMOND DOSS</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">HENRY BERG</button>
+                            <button onclick="errar()">STEVE ROGERS</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1029,16 +1029,16 @@
                         <div id="div_numQuestao">
                             41.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Do que os Desbravadores não gostam de ser chamados?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">CRIANÇAS</button>
+                            <button onclick="errar()">CONSQUISTADORES</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">SOLDADOS</button>
+                            <button onclick="acertar()">ESCOTEIROS</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1053,16 +1053,16 @@
                         <div id="div_numQuestao">
                             42.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual o nome do último campori da DSA</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">CAMPEÕES DA VERDADE</button>
+                            <button onclick="errar()">FÉ INVENCIVEL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">UM CHAMADO DE CORAGEM</button>
+                            <button onclick="acertar()">A MELHOR AVENTURA</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1077,16 +1077,16 @@
                         <div id="div_numQuestao">
                             43.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual o último item da Lei dos Desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">A MENSAGEM DO ADVENTO</button>
+                            <button onclick="errar()">OBSERVAR A DEVOÇÃO MATINAL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">IR AONDE DEUS MANDAR</button>
+                            <button onclick="errar()">TER SEMPRE UM CANTICO NO CORAÇÃO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1102,16 +1102,16 @@
                         <div id="div_numQuestao">
                             44.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Quais são os cargos dentro de uma unidade?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">CAPELÃO, SECRETÁRIO, PROFESSOR, CAPITÃO</button>
+                            <button onclick="acertar()">CAPITÃO, TESOUREIRO, ALMO-XARIFADO, SECRETÁRIO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">CAPITÃO, SECRETÁRIO, DIRETOR, LIBERO</button>
+                            <button onclick="errar()">SECRETÁRIO, CONSELHEIRO, EXECUTIVO, CAPITÃO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1126,16 +1126,16 @@
                         <div id="div_numQuestao">
                             45.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual o papel do conselheiro?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="acertar()">ORGANIZAR A UNIDADE E A CONVIVÊNCIA DOS MEMBROS</button>
+                            <button onclick="errar()">TRANSFERIR OS FUNDOS PARA A TESOURARIA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">MANTER EM DIA O LIVRO DE ATAS</button>
+                            <button onclick="errar()">COMANDAR A UNIDADE</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1150,16 +1150,16 @@
                         <div id="div_numQuestao">
                             46.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual a cor da classe de Companheiro?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="acertar()">VERMELHO</button>
+                            <button onclick="errar()">AZUL</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">VERDE</button>
+                            <button onclick="errar()">AMARELO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1174,16 +1174,16 @@
                         <div id="div_numQuestao">
                             47.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual a cor do uniforme de gala do desbravadores (menores de 16)?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">MARROM</button>
+                            <button onclick="errar()">BRANCO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="errar()">VERDE</button>
+                            <button onclick="acertar()">CAQUI</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1198,16 +1198,16 @@
                         <div id="div_numQuestao">
                             48.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Qual a cor do lenço dos desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">PRETO</button>
+                            <button onclick="errar()">VERDE</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">AMARELO</button>
+                            <button onclick="errar()">AZUL</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1222,16 +1222,16 @@
                         <div id="div_numQuestao">
                             49.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Por que o dia Mundial dos Desbravadores é no mês de setembro?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="errar()">7 É O NUMERO DA PERFEIÇÃO</button>
+                            <button onclick="errar()">NÃO TEM MOTIVO ESPECÍFICO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">POR CONTA DO SETEMBRO AMARELO</button>
+                            <button onclick="errar()">O CLUBE FOI CRIADO EM SETEMBRO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1246,16 +1246,16 @@
                         <div id="div_numQuestao">
                             50.
                         </div>
-                        <h2>Qual nó é ultilizado para iniciar uma amarra?</h2>
+                        <h2>Você gostou do quiz?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">NÓ DIREITO</button>
-                            <button onclick="errar()">NÓ VOLTA DO FIEL</button>
+                            <button onclick="acertar()">SIM</button>
+                            <button onclick="acertar()">COM CERTEZA</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>NÓ CATAU</button>
-                            <button>NÓ ESQUERDO</button>
+                            <button onclick="acertar()">OBVIAMENTE, SIM</button>
+                            <button onclick="acertar()">MUITOOOOO S2</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1263,6 +1263,78 @@
                     </div>
                 </div>
             </div>
+
+            <div id="div_questao51" class="div_quiz">
+                <div id="div_conteudoFim">
+                    <h1>VOCÊ GANHOU!</h1>
+                    <h2>Aguarde o próximo quiz!</h2>
+                    <div id="div_quizFim">
+                        <div id="div_contato">
+                            <h3>@ellencarolinex777</h3>
+                            <a href="https://www.instagram.com/ellencarolinex777/"><img
+                                    src="./assets/icons8-insta-48.png"></a>
+                            <a href="mailto:ellencarolinex777@gmail.com"><img src="./assets/icons8-mensagem-48.png"></a>
+                            <a href="https://github.com/yEllenCaroline"><img src="./assets/icons8-github-48.png"></a>
+                            <a href="https://www.linkedin.com/in/ellen-caroline-alves-chaves-875b02248/"><img
+                                    src="./assets/icons8-linkedin-48.png"></a>
+
+                            <div id="div_tryagain">
+                                <span onclick="jogarNovamente()">JOGAR NOVAMENTE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_dashboard" class="div_quiz">
+                <div id="div_conteudoDash">
+                    <div id="div_kpiDash">
+                        <h2>SEU RANKING</h2>
+                        <div id="div_rank">
+                            <!-- <span>SS</span> -->
+                        </div>
+                    </div>
+                    <div id="div_rankDash">
+                        <h2>RANKING</h2>
+                        <div id="div_colunas">
+                            <div id="div_posicao">
+                                <h2>POSIÇÃO</h2>
+                                <div id="div_resultadoPosicao">
+                                    <!-- <span>1°</span>
+                                    <span>1°</span>
+                                    <span>1°</span> -->
+                                </div>
+                            </div>
+                            <div id="div_nome">
+                                <h2>NOME</h2>
+                                <div id="div_resultadoNome">
+                                    <!-- <span>Ellen</span> -->
+                                </div>
+                            </div>
+                            <div id="div_pontuacao">
+                                <h2>PONTUAÇÃO</h2>
+                                <div id="div_resultadoPontuacao">
+                                    <!-- <span>30000</span> -->
+                                </div>
+                            </div>
+                            <div id="div_tempo">
+                                <h2>TEMPO</h2>
+                                <div id="div_resultadoTempo">
+                                    <!-- <s
+                                        
+                                        
+                                        
+                                        
+                                        pan>00:02:01</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
 
 
         </div>
@@ -1272,14 +1344,17 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var idUsuario = sessionStorage.ID_USUARIO;
 
-    var cont = 0;
-    var num_questao_atual = 1;
+    var pontuacao = 0;
+    var num_questao_atual = 0;
     var num_questao_anterior = 1;
 
     var timer;
     var startTime;
     var elapsedTime = 0;
     var tempoDeJogo = 0;
+    var num_questao_errada = null
+
+    var rank = ""
 
     function formatTime(ms) {
         const totalSeconds = Math.floor(ms / 1000);
@@ -1299,10 +1374,14 @@
         var proxima_questao = document.getElementById(guardar_proxima_questao);
 
         // Verifica se é a questão 0 pois nela não se adiciona ponto
-        if (num_questao_atual === 0) {
-            cont += 0;
-        } else{
-            cont += 10;
+        if (num_questao_atual === 0 || num_questao_atual == 51) {
+            pontuacao += 0;
+        } else {
+            pontuacao += num_questao_atual * 10;
+        }
+
+        if (num_questao_atual == 51) {
+
         }
         // Bloqueia a questão anterior
         anterior_questao.style.display = 'none';
@@ -1310,7 +1389,38 @@
         // Exibe a próxima questão
         proxima_questao.style.display = 'block';
 
-        console.log(cont)
+        console.log(pontuacao)
+    }
+
+    function jogo() {
+
+        div_dashboard.style.display = 'none'
+        div_questao0.style.display = 'block'
+        var guardar_voltarJogo = 'div_questao' + num_questao_atual;
+
+        var questao_voltarJogo = document.getElementById(guardar_voltarJogo);
+        if (guardar_voltarJogo == 'div_questao0') {
+            console.log("bom, essa é a tela inicial, não vai ter 'none'")
+        }
+        else {
+            questao_voltarJogo.style.display = "none"
+        }
+
+    }
+
+    function estatisticas() {
+        // mete um for aqui e pokas
+
+        for (i = 0; i <= 51; i++) {
+            var guardar_voltarJogo = 'div_questao' + i;
+
+            var questao_voltarJogo = document.getElementById(guardar_voltarJogo);
+
+            questao_voltarJogo.style.display = "none"
+        }
+        div_questaoError.style.display = 'none'
+        div_dashboard.style.display = 'block'
+
     }
 
     function tentarNovamente() {
@@ -1319,7 +1429,8 @@
     }
 
     function iniciar() {
-        
+        pontuacao = 0
+        num_questao_atual++
         div_questao0.style.display = 'none';
         div_questao1.style.display = 'block'
         startTime = Date.now() - elapsedTime;
@@ -1329,80 +1440,151 @@
     }
 
     function errar() {
-        var guardar_questao_errada = 'div_questao' + num_questao_atual;
+        num_questao_errada = num_questao_atual
+        var guardar_questao_errada = 'div_questao' + (num_questao_atual);
         var questao_atual_errada = document.getElementById(guardar_questao_errada)
         questao_atual_errada.style.display = 'none'
         div_questaoError.style.display = 'block'
         console.log(questao_atual_errada)
-        num_questao_atual = 1
+        num_questao_atual = 0
+
+        if (pontuacao >= 0 && pontuacao <= 2124) {
+            rank = "D"
+        }
+        else if (pontuacao <= 4249) {
+            rank = "C"
+        }
+        else if (pontuacao <= 6374) {
+            rank = "B"
+        }
+        else if (pontuacao <= 8499) {
+            rank = "A"
+        }
+        else if (pontuacao <= 10624) {
+            rank = "S"
+        }
+        else {
+            rank = "SS"
+        }
 
         clearInterval(timer);
         tempoDeJogo = elapsedTime;
         console.log('Tempo de jogo:', formatTime(tempoDeJogo));
+
         var tempoFormatado = formatTime(tempoDeJogo)
         // Aqui você pode adicionar a lógica para parar o quiz e enviar o tempo para o banco de dados
         // Exemplo de como enviar o tempo para o banco de dados:
         // enviarTempoParaBancoDeDados(tempoDeJogo);
 
 
+        // console.log('Aqui tem que chegar a pontuação!!!!!!!!: ' +pontuacao)
+        // Enviando o valor da nova input
+        // fetch("/usuarios/cadastrarQuiz", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //         // crie um atributo que recebe o valor recuperado aqui
+        //         // Agora vá para o arquivo routes/usuario.js
 
-          // Enviando o valor da nova input
-    fetch("/usuarios/cadastrarQuiz", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        pontuacaoServer: cont,
-        
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+        //     }),
+        // })
+        //     .then(function (resposta) {
+        //         console.log("resposta: ", resposta);
 
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
+        //     })
+        //     .catch(function (resposta) {
+        //         console.log(`#ERRO: ${resposta}`);
+        //     });
 
-    return false;
+        // return false;
 
 
-            // Enviando o valor da nova input
-            fetch("/usuarios/cadastrarQuiz", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        
-        usuarioServer: idUsuario,
-        // quizServer:  ,
-        questaoServer: questao_atual_errada,
-        tempoServer: tempoFormatado,
-        
-        
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarMetricasQuiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
 
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
+                usuarioServer: idUsuario,
+                questaoServer: num_questao_errada,
+                pontuacaoServer: pontuacao,
+                tempoServer: tempoFormatado,
+                rankServer: rank,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
 
-    return false;
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
 
-    cont = 0
-  }
+        return false;
 
-    
+    }
+    function listar() {
+        fetch("/usuarios/listar", {
+            method: "GET",
+        })
+            .then(function (resposta) {
+                resposta.json().then((resposta) => {
+                    console.log(resposta)
+                    for (var i = 0; i < resposta.length; i++) {
+                        div_resultadoPosicao.innerHTML += `<span>${i + 1}°<span><br>`
+                        div_resultadoNome.innerHTML += `<span>${resposta[i].nome}</span><br>`;
+                        div_resultadoPontuacao.innerHTML += `<span>${resposta[i].pontuacao}</span><br>`;
+                        div_resultadoTempo.innerHTML += `<span>${resposta[i].tempo}</span><br>`
 
+                    }
+                });
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+    }
+    var maximo;
+    var ranking;
+
+    function listarKpi(usuario) {
+
+        fetch("/usuarios/listarKpi", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            // body: JSON.stringify({
+
+            //     usuarioServer: idUsuario,
+            // }),
+        })
+            .then(function (resposta) {
+                resposta.json().then((resposta) => {
+                    maximo = resposta[0].Maximo;
+                    ranking = resposta[0].ranking;
+                    console.log("Esse é o valor da KPIIIII:" + resposta)
+                    if (ranking == undefined) {
+                        div_rank.innerHTML = `<span>??</span>`
+                        console.log("Resultado Kpi: " +resposta)
+
+                    } else {
+                        div_rank.innerHTML = `<span>${ranking}</span>`
+                        console.log('resultado ranking: ' + ranking)
+                        console.log("Resultado Kpi: " +resposta)
+                    }
+                });
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+    }
 </script>
 
 
