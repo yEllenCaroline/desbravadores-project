@@ -48,27 +48,6 @@ function autenticar(req, res) {
 
 }
 
-// function cadastrarQuiz(req, res) {
-
-//      // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-//      usuarioModel.cadastrarQuiz(pontuacao)
-//      .then(
-//          function (resultado) {
-//              res.json(resultado);
-//          }
-//      ).catch(
-//          function (erro) {
-//              console.log(erro);
-//              console.log(
-//                  "\nHouve um erro ao realizar o cadastro do quiz! Erro: ",
-//                  erro.sqlMessage
-//              );
-//              res.status(500).json(erro.sqlMessage);
-//          }
-//      );
-
-// }
-
 function cadastrarMetricasQuiz(req, res) {
     var usuario = req.body.usuarioServer;
     var questao = req.body.questaoServer;
