@@ -1,43 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-    <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
   <link rel="stylesheet" href="cadastro.css">
-
-
   <title>DesbravaJa | Cadastro</title>
 </head>
-
 <body>
   <section id="section_login">
     <div id="div_voltar">
-     <a href="../public/index.html"><img src="../assets/icone_casa.png" alt=""></a>
+      <a href="index.html"><img src="../assets/icone_casa.png" alt=""></a>
     </div>
     <div class="caixaLogin">
       <div class="login">
         <h2>Cadastro</h2>
         <div class="input">
           <input id="nome_input" type="text" placeholder="Nome">
-          <div id="mensagem_erro"></div>
+          <div id="nome_erro" class="mensagem_erro"></div>
         </div>
         <div class="input">
           <input id="email_input" type="text" placeholder="Email">
-          <div id="mensagem_erro"></div>
+          <div id="email_erro" class="mensagem_erro"></div>
         </div>
         <div class="input">
           <input id="senha_input" type="password" placeholder="Senha">
-          <div id="mensagem_erro"></div>
+          <div id="senha_erro" class="mensagem_erro"></div>
         </div>
         <div class="input">
           <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua Senha">
-          <div id="mensagem_erro"></div>
+          <div id="confirmacao_senha_erro" class="mensagem_erro"></div>
         </div>
         <div class="input">
           <button type="submit" value="Entrar" onclick="cadastrar()">Cadastrar</button>
@@ -54,92 +49,88 @@
 </body>
 <script>
   function cadastrar() {
-    
+    // Limpar todas as mensagens de erro
+    nome_erro.innerHTML = ""
+    email_erro.innerHTML = ""
+    senha_erro.innerHTML = ""
+    confirmacao_senha_erro.innerHTML = ""
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-   
-    if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-          ) {
-      // cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+    // Recupere o valor da nova input pelo nome do id
+    var nomeVar = nome_input.value
+    var emailVar = email_input.value
+    var senhaVar = senha_input.value
+    var confirmacaoSenhaVar = confirmacao_senha_input.value
 
-     
-      return false;
-    } else {
-      // setInterval(sumirMensagem, 5000);
+    var tamanho_senha = senhaVar.length
+    var index_arroba = emailVar.indexOf('@')
+    var index_ponto = emailVar.indexOf('.')
+
+    // Verificar e exibir mensagens de erro
+    var erro = false
+    if (nomeVar === "") {
+      nome_erro.innerHTML = "Este campo não pode ficar vazio."
+      erro = true
+    }
+    if (emailVar === "") {
+      email_erro.innerHTML = "Este campo não pode ficar vazio."
+      erro = true
+    }
+    else if(index_arroba < 0 || index_ponto < 0){
+      email_erro.innerHTML = "O email precisa ter '@' e ' . ' ."  
+      erro = true
+    }
+    if (senhaVar === "") {
+      senha_erro.innerHTML = "Este campo não pode ficar vazio."
+      erro = true
+    }
+    else if(tamanho_senha != 6){
+      senha_erro.innerHTML = "A senha precisa ter 6 caracteres."
+      erro = true
+    }
+    if (confirmacaoSenhaVar === "") {
+      confirmacao_senha_erro.innerHTML = "Este campo não pode ficar vazio."
+      erro = true
+    }
+    if (senhaVar !== confirmacaoSenhaVar) {
+      confirmacao_senha_erro.innerHTML = "As senhas não coincidem."
+      erro = true
     }
 
-    // Enviando o valor da nova input
+    // Se houver erro, não prosseguir
+    if (erro) {
+      return false
+    }
+
+    // Prosseguir com o método fetch ou qualquer outra lógica adicional
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        // empresaServer: empresaVar
       }),
     })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
+    .then(function (resposta) {
+      console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-          // cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-          alert("Este usuário ja existe!")
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
+      if (resposta.ok) {
+        alert( "Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+        setTimeout(() => {
+          window.location = "login.html";
+        }, 2000);
+      } else {
+        throw new Error("Houve um erro ao tentar realizar o cadastro!");
+      }
+    })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+      alert("Este usuário já existe!");
+    });
 
     return false;
   }
-
-  // function listar() {
-  //   fetch("/empresas/listar", {
-  //     method: "GET",
-  //   })
-  //     .then(function (resposta) {
-  //       resposta.json().then((empresas) => {
-  //         empresas.forEach((empresa) => {
-  //           listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-  //         });
-  //       });
-  //     })
-  //     .catch(function (resposta) {
-  //       console.log(`#ERRO: ${resposta}`);
-  //     });
-  // }
-
-  // function sumirMensagem() {
-  //   cardErro.style.display = "none";
-  // }
 </script>
 </html>

@@ -8,27 +8,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-    <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
+  <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
   <link rel="stylesheet" href="login.css">
   <title>DesbravaJá | Login</title>
 </head>
 
 <body>
   <section id="section_login">
-      <div id="div_voltar">
-        <a href="../public/index.html"><img src="../assets/icone_casa.png" alt=""></a>
-      </div>
+    <div id="div_voltar">
+      <a href="index.html"><img src="../assets/icone_casa.png" alt=""></a>
+    </div>
     <div class="caixaLogin">
       <div class="login">
         <h2>Login</h2>
         <div class="input">
           <input id="email_input" type="text" placeholder="Email">
+          <div id="email_erro" class="mensagem_erro"></div>
         </div>
-        <div id="div_mensErro"></div>
         <div class="input">
           <input id="senha_input" type="password" placeholder="Senha">
+          <div id="senha_erro" class="mensagem_erro"></div>
         </div>
-        <div id="div_mensErro"></div>
         <div class="input">
           <button onclick="entrar()" type="submit" value="Entrar">Entrar</button>
         </div>
@@ -46,69 +46,83 @@
 
 
   function entrar() {
-      
-      var emailVar = email_input.value;
-      var senhaVar = senha_input.value;
 
-      if (emailVar == "" || senhaVar == "") {
-          
-          mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-         
-          return false;
-      }
-      else {
-        
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+
+    var tamanho_senha = senhaVar.length
+    var index_arroba = emailVar.indexOf('@')
+    var index_ponto = emailVar.indexOf('.')
+
+
+    if (emailVar === "") {
+      email_erro.innerHTML = "Este campo não pode ficar vazio."
+    }
+    else if (index_arroba < 0 || index_ponto < 0) {
+      email_erro.innerHTML = "O email precisa ter '@' e ' . ' ."
+    }
+    if (senhaVar === "") {
+      senha_erro.innerHTML = "Este campo não pode ficar vazio."
+    }
+    else if (tamanho_senha < 6) {
+      senha_erro.innerHTML = "A senha precisa ter ao menos 6 caracteres."
+    }
+
+    // Se houver erro, não prosseguir
+    else {
 
       console.log("FORM LOGIN: ", emailVar);
       console.log("FORM SENHA: ", senhaVar);
 
       fetch("/usuarios/autenticar", {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              emailServer: emailVar,
-              senhaServer: senhaVar
-          })
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          emailServer: emailVar,
+          senhaServer: senhaVar
+        })
       }).then(function (resposta) {
-          console.log("ESTOU NO THEN DO entrar()!")
+        console.log("ESTOU NO THEN DO entrar()!")
 
-          if (resposta.ok) {
-              console.log(resposta);
-              console.log("resposta");
+        if (resposta.ok) {
+          console.log(resposta);
+          console.log("resposta");
 
-              resposta.json().then(json => {
-                  console.log(json);
-                  console.log(JSON.stringify(json));
-                  sessionStorage.EMAIL_USUARIO = json.email;
-                  sessionStorage.NOME_USUARIO = json.nome;
-                  sessionStorage.ID_USUARIO = json.idUsuario;
-            
+          resposta.json().then(json => {
+            console.log(json);
+            console.log(JSON.stringify(json));
+            sessionStorage.EMAIL_USUARIO = json.email;
+            sessionStorage.NOME_USUARIO = json.nome;
+            sessionStorage.ID_USUARIO = json.idUsuario;
 
-                  setTimeout(function () {
-                      window.location = "quiz.html";
-                  }, 1000); // apenas para exibir o loading
 
-              });
+            setTimeout(function () {
+              window.location = "quiz.html";
+            }, 1000); // apenas para exibir o loading
 
-          } else {
+          });
 
-              console.log("Houve um erro ao tentar realizar o login!");
-              resposta.text().then(texto => {
-                  console.error(texto);
-              
-              });
-          }
+        } else {
+
+          console.log("Houve um erro ao tentar realizar o login!");
+          resposta.text().then(texto => {
+            console.error(texto);
+            alert(texto)
+
+          });
+        }
 
       }).catch(function (erro) {
-          console.log(erro);
+        console.log(erro);
       })
 
       return false;
+    }
   }
-}
 
-  
+
 </script>
+
 </html>

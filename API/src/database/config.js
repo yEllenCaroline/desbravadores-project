@@ -9,6 +9,8 @@ var mySqlConfig = {
     port: process.env.DB_PORT
 };
 
+
+
 function executar(instrucao) {
 
     if (process.env.AMBIENTE_PROCESSO !== "producao" && process.env.AMBIENTE_PROCESSO !== "desenvolvimento") {

@@ -86,6 +86,11 @@ h2 {
   color: #fff;
 }
 
+.input{
+  display: flex;
+  flex-direction: column;
+}
+
 .login .input {
   display: flex;
   justify-content: center;
@@ -163,4 +168,9 @@ h2 {
 
 #div_voltar img {
   height: 50px;
+}
+
+.mensagem_erro{
+  color: red;
+  font-size: 10pt;
 }
