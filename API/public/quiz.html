@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>DesbravaJa | Quiz</title>
     <link rel="stylesheet" href="quiz.css">
 </head>
 
@@ -48,7 +48,7 @@
             <div id="div_questao0" class="div_quiz">
                 <div id="div_conteudoInicioQuiz">
 
-                    <img src="./assets/desbravaJá.png" alt="">
+                    <img src="./assets/desbravaja.png" alt="">
                     <div id="div_inicioQuiz">
                         <button onclick="iniciar()">INICIAR</button>
                         <button onclick="funcionar()">COMO FUNCIONA?</button>
@@ -1286,6 +1286,66 @@
                 </div>
             </div>
 
+            <div id="div_comoFunciona" class="div_quiz">
+                <div id="div_conteudoComoFunciona">
+                    <h1>JÁ JOGOU GENIO QUIZ?!</h1>
+                    <h2>Imagina ele sendo dos Desbravadores!</h2>
+                    <div id="div_quizFunciona">
+                        <h3>O <span>DesbravaJá</span> é um jogo com 50 perguntas, não podendo errar nenhuma. Lembre-se,
+                            nem sempre as
+                            respostas estão nas alternativas</h3>
+                    </div>
+                    <div id="div_continuar">
+                        <span>Bom Jogo!</span>
+                        <button onclick="continuar()">CONTINUAR</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="div_creditos" class="div_quiz">
+                <div id="div_conteudoCreditos">
+                    <div id="div_creditosTexto">
+
+                        <p>
+                            <b>MUITO OBRIGADO POR JOGAR!</b><br>
+                            <img src="./assets/desbravaja.png" alt="" height="50px">
+                            <br><br><br><br>
+
+                            <b>Agradecimentos</b><br>
+                            Igor Chu<br>
+                            Gustavo Gil<br>
+                            João Pedro Mori<br>
+                            Cauãn Araruna<br>
+                            Elineuza Pascini<br>
+                            Elza Chaves<br>
+                            Marcos Chaves
+                        </p>
+
+                        <p><b>Patrocínio</b><br>Ellen Chaves</p>
+
+                        <p><b>Direção</b><br>Ellen Chaves</p>
+
+                        <p><b>Produção Geral</b><br>Ellen Chaves</p>
+
+                        <p><b>Efeitos visuais</b><br>Ellen Chaves</p>
+
+                        <p><b>Design</b><br>Ellen Chaves</p>
+
+                        <p><b>Animação</b><br>Ellen Chaves</p>
+
+                        <p><b>Inspiração</b><br>André Birnfeld (Genio Quiz)</p>
+
+                    </div>
+
+                    <div id="div_voltarCreditos">
+                        <button onclick="voltar()">Voltar</button>
+
+                    </div>
+                </div>
+            </div>
+
+
             <div id="div_dashboard" class="div_quiz">
                 <div id="div_conteudoDash">
                     <div id="div_kpiDash">
@@ -1320,12 +1380,6 @@
                             <div id="div_tempo">
                                 <h2>TEMPO</h2>
                                 <div id="div_resultadoTempo">
-                                    <!-- <s
-                                        
-                                        
-                                        
-                                        
-                                        pan>00:02:01</span> -->
                                 </div>
                             </div>
                         </div>
@@ -1356,6 +1410,26 @@
 
     var rank = ""
 
+    function funcionar() {
+        div_questao0.style.display = 'none'
+        div_comoFunciona.style.display = 'block'
+    }
+    function continuar() {
+        div_comoFunciona.style.display = 'none'
+        div_questao0.style.display = 'block'
+    }
+    function creditos(){
+        div_questao0.style.display = 'none'
+        div_creditos.style.display = 'flex'
+    }
+    function voltar(){
+        div_creditos.style.display = 'none'
+        div_questao0.style.display = 'block'
+    }
+
+
+
+    // para formatar o timer.
     function formatTime(ms) {
         const totalSeconds = Math.floor(ms / 1000);
         const hours = Math.floor(totalSeconds / 3600);
@@ -1363,7 +1437,7 @@
         const seconds = totalSeconds % 60;
         return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     }
-
+    // logica para passar a div da questão ao acertar a mesma
     function acertar() {
         num_questao_atual++;
         num_questao_anterior = num_questao_atual - 1;
@@ -1393,24 +1467,23 @@
     }
 
     function jogo() {
+        num_questao_atual = 0
+        pontuacao = 0
+        for (i = 0; i <= 51; i++) {
+            var guardar_voltarJogo = 'div_questao' + i;
 
-        div_dashboard.style.display = 'none'
-        div_questao0.style.display = 'block'
-        var guardar_voltarJogo = 'div_questao' + num_questao_atual;
+            var questao_voltarJogo = document.getElementById(guardar_voltarJogo);
 
-        var questao_voltarJogo = document.getElementById(guardar_voltarJogo);
-        if (guardar_voltarJogo == 'div_questao0') {
-            console.log("bom, essa é a tela inicial, não vai ter 'none'")
-        }
-        else {
             questao_voltarJogo.style.display = "none"
         }
-
+        div_questao0.style.display = 'block'
+        div_questaoError.style.display = 'none'
+        div_dashboard.style.display = 'none'
     }
 
     function estatisticas() {
-        // mete um for aqui e pokas
-
+        num_questao_atual = 0
+        pontuacao = 0
         for (i = 0; i <= 51; i++) {
             var guardar_voltarJogo = 'div_questao' + i;
 
@@ -1420,7 +1493,6 @@
         }
         div_questaoError.style.display = 'none'
         div_dashboard.style.display = 'block'
-
     }
 
     function tentarNovamente() {
@@ -1472,33 +1544,7 @@
         console.log('Tempo de jogo:', formatTime(tempoDeJogo));
 
         var tempoFormatado = formatTime(tempoDeJogo)
-        // Aqui você pode adicionar a lógica para parar o quiz e enviar o tempo para o banco de dados
-        // Exemplo de como enviar o tempo para o banco de dados:
-        // enviarTempoParaBancoDeDados(tempoDeJogo);
 
-
-        // console.log('Aqui tem que chegar a pontuação!!!!!!!!: ' +pontuacao)
-        // Enviando o valor da nova input
-        // fetch("/usuarios/cadastrarQuiz", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         // crie um atributo que recebe o valor recuperado aqui
-        //         // Agora vá para o arquivo routes/usuario.js
-
-        //     }),
-        // })
-        //     .then(function (resposta) {
-        //         console.log("resposta: ", resposta);
-
-        //     })
-        //     .catch(function (resposta) {
-        //         console.log(`#ERRO: ${resposta}`);
-        //     });
-
-        // return false;
 
 
         // Enviando o valor da nova input
@@ -1541,7 +1587,6 @@
                         div_resultadoNome.innerHTML += `<span>${resposta[i].nome}</span><br>`;
                         div_resultadoPontuacao.innerHTML += `<span>${resposta[i].pontuacao}</span><br>`;
                         div_resultadoTempo.innerHTML += `<span>${resposta[i].tempo}</span><br>`
-
                     }
                 });
             })
@@ -1569,14 +1614,13 @@
                     maximo = resposta[0].Maximo;
                     ranking = resposta[0].ranking;
                     console.log("Esse é o valor da KPIIIII:" + resposta)
-                    if (ranking == undefined) {
+                    if (ranking == undefined || ranking == "") {
                         div_rank.innerHTML = `<span>??</span>`
-                        console.log("Resultado Kpi: " +resposta)
+                        console.log("Resultado Kpi: " + resposta)
 
                     } else {
                         div_rank.innerHTML = `<span>${ranking}</span>`
-                        console.log('resultado ranking: ' + ranking)
-                        console.log("Resultado Kpi: " +resposta)
+                        console.log("Resultado Kpi: " + resposta)
                     }
                 });
             })

@@ -315,6 +315,121 @@ body {
     padding-right: 5vh;
 }
 
+#div_conteudoComoFunciona{
+    background-image: url(./assets/fundo\ amarelo.jpg);
+    background-size: cover;
+    border-radius: 50px;
+    font-family: "Permanent Marker", cursive;
+    color: black;
+    font-weight: lighter;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#div_conteudoComoFunciona h1{
+    font-size: 30pt;
+    color: #1c1cca;
+    margin-top:-20px;
+}
+#div_conteudoComoFunciona h2{
+    margin-top: -30px;
+}
+#div_conteudoComoFunciona h3{
+    margin-top: -20px;
+    font-size: 20pt;
+}
+
+#div_quizFunciona{
+    width:50%;
+    font-weight: lighter;
+}
+
+#div_quizFunciona span{
+    color: #ff0000;
+}
+
+#div_continuar{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#div_continuar span{
+    font-size: 24pt;
+}
+
+#div_continuar button{
+    font-family: "Permanent Marker", cursive;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    font-size: 14pt;
+    height: 8vh;
+    width: 18vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#div_continuar button:hover{
+    transform: scale(1.05);
+}
+
+#div_creditos{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#div_conteudoCreditos{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    gap: 58px;
+}
+
+#div_creditosTexto{
+    font-size: 14pt;
+    width: 100%;
+    text-align: center;
+    animation: mostrarCreditos 50s ease ;
+    
+}
+
+#div_voltarCreditos{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    justify-content: flex-end;
+}
+@keyframes mostrarCreditos {
+    0% {
+        transform: translateY(-800px);
+    }
+
+    100% {
+        transform: translateY(800px);
+    }
+}
+
+#div_conteudoCreditos button{
+    font-family: "Permanent Marker", cursive;
+    border: solid #983400 3px; 
+    background-color:#9a6601;
+    font-size: 14pt;
+    height: 8vh;
+    width: 18vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#div_conteudoCreditos button:hover{
+    transform: scale(1.05);
+}
+
 
 #div_conteudoDash{
     font-family: "Permanent Marker", cursive;
@@ -442,6 +557,14 @@ body {
 #div_colunas span{
     font-size: 12pt;
     border-bottom: solid black;
+}
+
+#div_creditos{
+    display: none;
+}
+
+#div_comoFunciona{
+    display: none;
 }
 
 #div_dashboard{
