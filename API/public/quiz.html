@@ -10,18 +10,25 @@
         rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!--Sweetalert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css">
+
+    <!--ChartJs-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <title>DesbravaJa | Quiz</title>
     <link rel="stylesheet" href="quiz.css">
 </head>
 
-<body onload="listar(),listarKpi()">
+<body onload="listar(),listarKpi(),capturarEstrelas()">
     <section id="section_quiz">
         <div id="div_caixa">
             <div id="div_opcoes">
                 <div id="div_logo">
                     <img src="./assets/Wallpaper_Desbravadores-removebg-preview.png" alt="">
-                    <img id="desbravaja" src="./assets/Novo_Projeto-removebg-preview.png" alt="">
+                    <img id="desbravaja" src="./assets/desbravaja.png" alt="">
                 </div>
 
                 <div id="div_hello">
@@ -53,6 +60,27 @@
                         <button onclick="iniciar()">INICIAR</button>
                         <button onclick="funcionar()">COMO FUNCIONA?</button>
                         <button onclick="creditos()">CRÉDITOS</button>
+                    </div>
+                    <div id="div_IrParaAvaliacao">
+                        <button onclick="avaliar()"><img src="./assets/icons8-estrela-50.png"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_avaliacao" class="div_quiz">
+                <div id="div_conteudoAvaliacao">
+                    <h1>Avalie este jogo!</h1>
+                    <img src="./assets/desbravaja.png" alt="">
+                    <div id="div_estrelas">
+                        <img onclick="avaliarNota(1)" id="estrela1" src="./assets/icons8-estrela-48.png">
+                        <img onclick="avaliarNota(2)" id="estrela2" src="./assets/icons8-estrela-48.png">
+                        <img onclick="avaliarNota(3)" id="estrela3" src="./assets/icons8-estrela-48.png">
+                        <img onclick="avaliarNota(4)" id="estrela4" src="./assets/icons8-estrela-48.png">
+                        <img onclick="avaliarNota(5)" id="estrela5" src="./assets/icons8-estrela-48.png">
+                        <div id="div_mens"></div>
+                    </div>
+                    <div id="div_voltarHome">
+                        <button onclick="voltarHome()">VOLTAR</button>
                     </div>
                 </div>
             </div>
@@ -1272,14 +1300,14 @@
                         <div id="div_contato">
                             <h3>@ellencarolinex777</h3>
                             <a href="https://www.instagram.com/ellencarolinex777/"><img
-                                    src="./assets/icons8-insta-48.png"></a>
-                            <a href="mailto:ellencarolinex777@gmail.com"><img src="./assets/icons8-mensagem-48.png"></a>
-                            <a href="https://github.com/yEllenCaroline"><img src="./assets/icons8-github-48.png"></a>
+                                    src="./assets/insta_icon.png"></a>
+                            <a href="mailto:ellencarolinex777@gmail.com"><img src="./assets/email_icon.png"></a>
+                            <a href="https://github.com/yEllenCaroline"><img src="./assets/github_icon.png"></a>
                             <a href="https://www.linkedin.com/in/ellen-caroline-alves-chaves-875b02248/"><img
-                                    src="./assets/icons8-linkedin-48.png"></a>
+                                    src="./assets/linkdin_icon.png"></a>
 
-                            <div id="div_tryagain">
-                                <span onclick="jogarNovamente()">JOGAR NOVAMENTE</span>
+                            <div onclick="jogarNovamente()" id="div_tryagain">
+                                <span>JOGAR NOVAMENTE</span>
                             </div>
                         </div>
                     </div>
@@ -1339,7 +1367,7 @@
                     </div>
 
                     <div id="div_voltarCreditos">
-                        <button onclick="voltar()">Voltar</button>
+                        <button onclick="voltarCreditos()">Voltar</button>
 
                     </div>
                 </div>
@@ -1347,11 +1375,22 @@
 
 
             <div id="div_dashboard" class="div_quiz">
+
                 <div id="div_conteudoDash">
-                    <div id="div_kpiDash">
-                        <h2>SEU RANKING</h2>
-                        <div id="div_rank">
-                            <!-- <span>SS</span> -->
+                    <div id="div_chartEkpi">
+                        <div class="chart-container">
+                            <h4>Avaliações do jogo em %</h4>
+                            <div class="chart">
+                                <canvas id="pieChart"></canvas>
+                            </div>
+                            <img src="./assets/Wallpaper_Desbravadores-removebg-preview.png">
+                        </div>
+
+                        <div id="div_kpiDash">
+                            <h2>SEU RANKING</h2>
+                            <div id="div_rank">
+                                <!-- <span>SS</span> -->
+                            </div>
                         </div>
                     </div>
                     <div id="div_rankDash">
@@ -1394,6 +1433,7 @@
         </div>
     </section>
 </body>
+
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     var idUsuario = sessionStorage.ID_USUARIO;
@@ -1418,15 +1458,81 @@
         div_comoFunciona.style.display = 'none'
         div_questao0.style.display = 'block'
     }
-    function creditos(){
+    function creditos() {
         div_questao0.style.display = 'none'
         div_creditos.style.display = 'flex'
     }
-    function voltar(){
+    function voltarCreditos() {
         div_creditos.style.display = 'none'
         div_questao0.style.display = 'block'
     }
+    function avaliar() {
+        div_questao0.style.display = 'none'
+        div_avaliacao.style.display = 'block'
+    }
+    function voltarHome() {
+        div_avaliacao.style.display = 'none'
+        div_questao0.style.display = 'block'
+    }
+    function jogarNovamente() {
+        div_questao51.style.display = 'none'
+        div_questao0.style.display = 'block'
+    }
 
+    var nota = 0;
+    function avaliarNota(valor) {
+        nota = valor;
+        alert()
+    }
+
+    function alert() {
+
+        Swal.fire({
+            title: "Você gostaria de enviar essa avaliação?<br>Nota: " + nota,
+            showDenyButton: true,
+            showCancelButton: false,
+            confirmButtonText: "Sim",
+            denyButtonText: `Não`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+
+
+                // Enviando o valor da nova input
+                fetch("/usuarios/cadastrarAvaliacao", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/usuario.js
+
+                        usuarioServer: idUsuario,
+                        avaliacaoServer: nota,
+
+                    }),
+                })
+                    .then(function (resposta) {
+                        Swal.fire("Enviado!", "", "success");
+                        console.log("resposta: ", resposta);
+
+
+                    })
+                    .catch(function (resposta) {
+                        Swal.fire("Avaliação já enviada anteriormente!", "", "error");
+                        console.log(`#ERRO: ${resposta}`);
+                    });
+
+                return false;
+
+
+
+            } else if (result.isDenied) {
+                Swal.fire("Não foi enviado!", "", "error");
+            }
+        });
+    }
 
 
     // para formatar o timer.
@@ -1447,6 +1553,12 @@
         var anterior_questao = document.getElementById(guardar_anterior_questao);
         var proxima_questao = document.getElementById(guardar_proxima_questao);
 
+        // Verifica se chegou na questão 51, o que significa que zerou o game
+        for (var i = 0; i <= 51; i++) {
+            if (num_questao_atual == 51) {
+                cadastrarMetricasQuiz()
+            }
+        }
         // Verifica se é a questão 0 pois nela não se adiciona ponto
         if (num_questao_atual === 0 || num_questao_atual == 51) {
             pontuacao += 0;
@@ -1454,9 +1566,6 @@
             pontuacao += num_questao_atual * 10;
         }
 
-        if (num_questao_atual == 51) {
-
-        }
         // Bloqueia a questão anterior
         anterior_questao.style.display = 'none';
 
@@ -1479,6 +1588,7 @@
         div_questao0.style.display = 'block'
         div_questaoError.style.display = 'none'
         div_dashboard.style.display = 'none'
+        div_avaliacao.style.display = 'none'
     }
 
     function estatisticas() {
@@ -1493,6 +1603,8 @@
         }
         div_questaoError.style.display = 'none'
         div_dashboard.style.display = 'block'
+        div_avaliacao.style.display = 'none'
+
     }
 
     function tentarNovamente() {
@@ -1511,6 +1623,7 @@
         }, 1000);
     }
 
+    var tempoFormatado;
     function errar() {
         num_questao_errada = num_questao_atual
         var guardar_questao_errada = 'div_questao' + (num_questao_atual);
@@ -1543,10 +1656,14 @@
         tempoDeJogo = elapsedTime;
         console.log('Tempo de jogo:', formatTime(tempoDeJogo));
 
-        var tempoFormatado = formatTime(tempoDeJogo)
+        tempoFormatado = formatTime(tempoDeJogo)
 
+        cadastrarMetricasQuiz()
+        cadastrarQuestaoErrada()
 
+    }
 
+    function cadastrarMetricasQuiz() {
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrarMetricasQuiz", {
             method: "POST",
@@ -1558,7 +1675,6 @@
                 // Agora vá para o arquivo routes/usuario.js
 
                 usuarioServer: idUsuario,
-                questaoServer: num_questao_errada,
                 pontuacaoServer: pontuacao,
                 tempoServer: tempoFormatado,
                 rankServer: rank,
@@ -1573,8 +1689,33 @@
             });
 
         return false;
-
     }
+
+    function cadastrarQuestaoErrada() {
+        fetch("/usuarios/cadastrarQuestaoErrada", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                usuarioServer: idUsuario,
+                questaoServer: num_questao_errada,
+
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+
+        return false;
+    }
+
     function listar() {
         fetch("/usuarios/listar", {
             method: "GET",
@@ -1629,6 +1770,104 @@
             });
 
     }
+
+    const pieChart = document.getElementById("pieChart");
+    let star1 = 0;
+    let star2 = 0;
+    let star3 = 0;
+    let star4 = 0;
+    let star5 = 0;
+
+
+    function generatePieChart(star1, star2, star3, star4, star5) {
+        console.log(star1)
+        console.log(star2)
+        console.log(star3)
+        console.log(star4)
+        console.log(star5)
+        Chart.defaults.font.size = 10;
+        Chart.defaults.color = "#ffffff";
+
+
+        const data = {
+            labels: [
+                '1 ★',
+                '2 ★',
+                '3 ★',
+                '4 ★',
+                '5 ★'
+            ],
+            datasets: [{
+                label: 'Porcentagem',
+                data: [star1, star2, star3, star4, star5],
+                backgroundColor: [
+                    '#AE6427',
+                    '#303030',
+                    '#FFCC00',
+                    '#D70000',
+                    '#4B97D2'
+                ],
+                hoverOffset: 4
+            }]
+        };
+
+        const config = {
+            type: 'doughnut',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins:{
+                legend:{
+                    labels:{
+                       boxWidth: 15,
+                       boxHeight: 15,
+                    }
+                }
+            }
+            }
+        };
+
+        new Chart(pieChart, config);
+    }
+
+    function capturarEstrelas() {
+        console.log(star1)
+        console.log(star2)
+        console.log(star3)
+        console.log(star4)
+        console.log(star5)
+        fetch(`/usuarios/capturarEstrelas`)
+            .then(resposta => {
+                console.log(star1)
+                resposta.json().then(res => {
+                    console.log(star1)
+                    console.log(star2)
+                    console.log(star3)
+                    console.log(star4)
+                    console.log(star5)
+                    if (res.length > 0) {
+                        let total = Number(res[0].star1) + Number(res[0].star2) + Number(res[0].star3) + Number(res[0].star4) + Number(res[0].star5);
+
+                        let pctStar1 = ((res[0].star1 * 100) / total).toFixed(1);
+                        let pctStar2 = ((res[0].star2 * 100) / total).toFixed(1);
+                        let pctStar3 = ((res[0].star3 * 100) / total).toFixed(1);
+                        let pctStar4 = ((res[0].star4 * 100) / total).toFixed(1);
+                        let pctStar5 = ((res[0].star5 * 100) / total).toFixed(1);
+
+                        generatePieChart(pctStar1, pctStar2, pctStar3, pctStar4, pctStar5);
+                    }
+                });
+            });
+    }
+
+    // window.addEventListener("load", () => {
+    //     listarKpi();
+    //     listar();
+    //     getFeedbackStarsCount();
+    // });
+
+    // document.addEventListener("contextmenu", event => event.preventDefault());
 </script>
 
 

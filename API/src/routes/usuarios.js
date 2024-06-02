@@ -7,7 +7,12 @@ var usuarioController = require("../controllers/usuarioController");
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
-
+router.post("/cadastrarAvaliacao", function (req, res) {
+    usuarioController.cadastrarAvaliacao(req, res);
+})
+router.post("/cadastrarQuestaoErrada", function (req, res) {
+    usuarioController.cadastrarQuestaoErrada(req, res);
+})
 
 router.post("/cadastrarMetricasQuiz", function (req, res) {
     usuarioController.cadastrarMetricasQuiz(req, res);
@@ -23,6 +28,10 @@ router.get("/listar", function (req, res) {
 
 router.get("/listarKpi", function (req, res) {
     usuarioController.listarKpi(req, res);
+});
+
+router.get("/capturarEstrelas", (req, res) => {
+    usuarioController.capturarEstrelas(req, res);
 });
 
 module.exports = router;

@@ -23,12 +23,32 @@ function cadastrar(nome, email, senha) {
 }
 
 
-
-function cadastrarMetricasQuiz(usuario, questao, pontuacao, tempo, rank) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED', \n \t\t >> verifique suas credenciais de acesso so banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarMetricasQuiz():", usuario, questao, pontuacao, tempo)
+function cadastrarAvaliacao(usuario, estrelas) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED', \n \t\t >> verifique suas credenciais de acesso so banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarAvaliacao():", usuario, estrelas)
 
     var instrucaoSql = `
-    INSERT INTO MetricasQuiz (fkUsuario, fkQuestao, pontuacao, tempo, ranking) VALUES ('${usuario}', '${questao}', '${pontuacao}', '${tempo}', '${rank}')
+    INSERT INTO Avaliacao (fkUsuario, estrelas) VALUES ('${usuario}', '${estrelas}')
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function cadastrarQuestaoErrada(usuario, questao) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED', \n \t\t >> verifique suas credenciais de acesso so banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarAvaliacao():", usuario, questao)
+
+    var instrucaoSql = `
+    INSERT INTO QuestaoErrada (fkUsuario, numeroQuestao) VALUES ('${usuario}', '${questao}')
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+function cadastrarMetricasQuiz(usuario, pontuacao, tempo, rank) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED', \n \t\t >> verifique suas credenciais de acesso so banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarMetricasQuiz():", usuario, pontuacao, tempo, rank)
+
+    var instrucaoSql = `
+    INSERT INTO MetricasQuiz (fkUsuario, pontuacao, tempo, ranking) VALUES ('${usuario}', '${pontuacao}', '${tempo}', '${rank}')
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
@@ -52,6 +72,18 @@ function listarKpi(usuario) {
     return database.executar(instrucaoSql);
 }
 
+function capturarEstrelas() {
+    const instrucaoSql = `SELECT COUNT(idAvaliacao) AS star5, 
+    (SELECT COUNT(idAvaliacao) FROM Avaliacao WHERE estrelas = 4) AS star4, 
+    (SELECT COUNT(idAvaliacao) FROM Avaliacao WHERE estrelas = 3) AS star3, 
+    (SELECT COUNT(idAvaliacao) FROM Avaliacao WHERE estrelas = 2) AS star2, 
+    (SELECT COUNT(idAvaliacao) FROM Avaliacao WHERE estrelas = 1) AS star1 
+    FROM Avaliacao WHERE estrelas = 5;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 
 function buscarUsuarioPorId(id) {
 
@@ -64,7 +96,10 @@ function buscarUsuarioPorId(id) {
 module.exports = {
     autenticar,
     cadastrar,
+    cadastrarAvaliacao,
+    cadastrarQuestaoErrada,
     listar,
     cadastrarMetricasQuiz,
     listarKpi,
+    capturarEstrelas,
 };
