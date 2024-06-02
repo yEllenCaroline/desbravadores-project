@@ -1628,6 +1628,7 @@
     }
 
     var tempoFormatado;
+    lista_ranking = ["SS", "S", "A", "B", "C", "D"]
     function errar() {
         num_questao_errada = num_questao_atual
         var guardar_questao_errada = 'div_questao' + (num_questao_atual);
@@ -1638,22 +1639,22 @@
         num_questao_atual = 0
 
         if (pontuacao >= 0 && pontuacao <= 2124) {
-            rank = "D"
+            rank = lista_ranking[5]
         }
         else if (pontuacao <= 4249) {
-            rank = "C"
+            rank = lista_ranking[4]
         }
         else if (pontuacao <= 6374) {
-            rank = "B"
+            rank = lista_ranking[3]
         }
         else if (pontuacao <= 8499) {
-            rank = "A"
+            rank = lista_ranking[2]
         }
         else if (pontuacao <= 10624) {
-            rank = "S"
+            rank = lista_ranking[1]
         }
         else {
-            rank = "SS"
+            rank = lista_ranking[0]
         }
 
         clearInterval(timer);
