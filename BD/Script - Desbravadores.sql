@@ -36,6 +36,3 @@ CREATE TABLE Avaliacao (
 	estrelas INT,
     FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario)
 );
-
-
-

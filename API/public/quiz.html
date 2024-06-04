@@ -40,7 +40,7 @@
                     <button onclick="estatisticas()">Estatísticas</button>
                 </div>
                 <div id="div_saida">
-                    <a href="./index.html"><img src="./assets/icone_casa.png" alt=""></a>
+                    <img style="cursor: pointer;" onclick="sair()" src="./assets/icone_casa.png" alt="">
                 </div>
             </div>
 
@@ -238,7 +238,7 @@
                         <div id="div_numQuestao">
                             7.
                         </div>
-                        <h2>Quem desnhou a bandeira dos Desbravadores?</h2>
+                        <h2>Quem desenhou a bandeira dos Desbravadores?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
@@ -407,7 +407,7 @@
                         <div id="div_numQuestao">
                             14.
                         </div>
-                        <h2>O que significa os 4 <span style="color: blue;">A</span> da saudação maranata?</h2>
+                        <h2>O que significa os 4 <span style="color: #34349a;">A</span> da saudação maranata?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
@@ -1081,7 +1081,7 @@
                         <div id="div_numQuestao">
                             42.
                         </div>
-                        <h2>Qual o nome do último campori da DSA</h2>
+                        <h2>Qual o nome do último campori da DSA?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
@@ -1344,9 +1344,10 @@
                             Igor Chu<br>
                             Gustavo Gil<br>
                             João Pedro Mori<br>
-                            Cauãn Araruna<br>
+                            Cauan Araruna<br>
                             Elineuza Pascini<br>
                             Elza Chaves<br>
+                            Edinardo Chaves<br>
                             Marcos Chaves
                         </p>
 
@@ -1478,14 +1479,52 @@
         div_questao51.style.display = 'none'
         div_questao0.style.display = 'block'
     }
+    function sair() {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-success",
+                cancelButton: "btn btn-danger"
+            },
+            buttonsStyling: true
+        });
+
+        swalWithBootstrapButtons.fire({
+            title: "Você tem certeza?",
+            text: "Você sairá, mas poderá voltar!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Sim, sair",
+            cancelButtonText: "Não, cancelar!",
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                swalWithBootstrapButtons.fire({
+                    title: "Saindo...",
+                    text: "Volte novamente, seu histórico ficará salvo!",
+                    icon: "success"
+                }).then(() => {
+                    setTimeout(() => {
+                        window.location = "index.html";
+                    }, 2000); // Aguarda 2 segundos antes de redirecionar
+                });
+            } else {
+                swalWithBootstrapButtons.fire({
+                    title: "Obrigado por continuar",
+                    text: "Então vamos de games :)",
+                    icon: "error"
+                });
+            }
+        });
+    }
+
 
     var nota = 0;
     function avaliarNota(valor) {
         nota = valor;
-        alert()
+        alertAvaliacao()
     }
 
-    function alert() {
+    function alertAvaliacao() {
 
         Swal.fire({
             title: "Você gostaria de enviar essa avaliação?<br>Nota: " + nota,
@@ -1556,7 +1595,36 @@
         // Verifica se chegou na questão 51, o que significa que zerou o game
         for (var i = 0; i <= 51; i++) {
             if (num_questao_atual == 51) {
+
+                if (pontuacao >= 0 && pontuacao <= 2124) {
+                    rank = lista_ranking[5]
+                }
+                else if (pontuacao <= 4249) {
+                    rank = lista_ranking[4]
+                }
+                else if (pontuacao <= 6374) {
+                    rank = lista_ranking[3]
+                }
+                else if (pontuacao <= 8499) {
+                    rank = lista_ranking[2]
+                }
+                else if (pontuacao <= 10624) {
+                    rank = lista_ranking[1]
+                }
+                else {
+                    rank = lista_ranking[0]
+                }
+
+
+                clearInterval(timer);
+                tempoDeJogo = elapsedTime;
+                console.log('Tempo de jogo:', formatTime(tempoDeJogo));
+
+                tempoFormatado = formatTime(tempoDeJogo)
+
                 cadastrarMetricasQuiz()
+                num_questao_atual = 0
+
             }
         }
         // Verifica se é a questão 0 pois nela não se adiciona ponto
@@ -1784,7 +1852,7 @@
     let star5 = 0;
 
 
-    function generatePieChart(star1, star2, star3, star4, star5) {
+    function gerarGraficoDonut(star1, star2, star3, star4, star5) {
         console.log(star1)
         console.log(star2)
         console.log(star3)
@@ -1822,14 +1890,14 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins:{
-                legend:{
-                    labels:{
-                       boxWidth: 15,
-                       boxHeight: 15,
+                plugins: {
+                    legend: {
+                        labels: {
+                            boxWidth: 15,
+                            boxHeight: 15,
+                        }
                     }
                 }
-            }
             }
         };
 
@@ -1860,19 +1928,12 @@
                         let pctStar4 = ((res[0].star4 * 100) / total).toFixed(1);
                         let pctStar5 = ((res[0].star5 * 100) / total).toFixed(1);
 
-                        generatePieChart(pctStar1, pctStar2, pctStar3, pctStar4, pctStar5);
+                        gerarGraficoDonut(pctStar1, pctStar2, pctStar3, pctStar4, pctStar5);
                     }
                 });
             });
     }
 
-    // window.addEventListener("load", () => {
-    //     listarKpi();
-    //     listar();
-    //     getFeedbackStarsCount();
-    // });
-
-    // document.addEventListener("contextmenu", event => event.preventDefault());
 </script>
 
 

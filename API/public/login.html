@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-     <!--Sweetalert2-->
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css">
+  <!--Sweetalert2-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css">
   <link rel="icon" href="../assets/Wallpaper_Desbravadores-removebg-preview.png">
   <link rel="stylesheet" href="login.css">
   <title>DesbravaJá | Login</title>
@@ -118,7 +118,15 @@
           console.log("Houve um erro ao tentar realizar o login!");
           resposta.text().then(texto => {
             console.error(texto);
-            alert(texto)
+            Swal.fire({
+              title: "Email e/ou senha inválidos! ",
+              icon: "error",
+              iconHtml: "",
+              confirmButtonText: "Ok",
+              // cancelButtonText: "لا",
+              // showCancelButton: true,
+              showCloseButton: false
+            });
 
           });
         }
