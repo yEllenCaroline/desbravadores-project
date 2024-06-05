@@ -394,8 +394,8 @@
                             <button onclick="errar()">SALVAR DO PECADO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button>O AMOR DE CRISTO ME MOTIVA</button>
-                            <button>OBSERVAR A DEVOÇÃO MATINAL</button>
+                            <button onclick="errar()">O AMOR DE CRISTO ME MOTIVA</button>
+                            <button onclick="errar()">OBSERVAR A DEVOÇÃO MATINAL</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1603,16 +1603,16 @@
                 if (pontuacao >= 0 && pontuacao <= 2124) {
                     rank = lista_ranking[5]
                 }
-                else if (pontuacao <= 4249) {
+                else if (pontuacao > 2124 && pontuacao <= 4249) {
                     rank = lista_ranking[4]
                 }
-                else if (pontuacao <= 6374) {
+                else if (pontuacao > 4249 && pontuacao <= 6374) {
                     rank = lista_ranking[3]
                 }
-                else if (pontuacao <= 8499) {
+                else if (pontuacao > 6374 && pontuacao <= 8499) {
                     rank = lista_ranking[2]
                 }
-                else if (pontuacao <= 10624) {
+                else if (pontuacao > 8499 && pontuacao <= 10624) {
                     rank = lista_ranking[1]
                 }
                 else {
