@@ -65,7 +65,7 @@ function listar() {
 function listarKpi(usuario) {
     // SELECT ranking FROM metricasQuiz JOIN Usuario ON fkUsuario = idUsuario WHERE idUsuario = '${usuario}' ORDER BY pontuacao DESC, tempo ASC LIMIT 1;
     var instrucaoSql = `
-    select max(pontuacao) as Maximo, ranking FROM metricasQuiz where fkUsuario = ${usuario} group by pontuacao, ranking order by pontuacao desc limit 1;
+    select max(pontuacao) as Maximo, ranking FROM MetricasQuiz where fkUsuario = ${usuario} group by pontuacao, ranking order by pontuacao desc limit 1;
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     console.log('resultado do id script: ' + usuario)

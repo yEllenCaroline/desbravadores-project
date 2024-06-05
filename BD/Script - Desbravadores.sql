@@ -10,8 +10,9 @@ CREATE TABLE Usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45)UNIQUE,
     email VARCHAR(45)UNIQUE,
-    senha CHAR(6)
+    senha VARCHAR(45)
 );
+
 
 CREATE TABLE QuestaoErrada (
     idQuestao INT PRIMARY KEY AUTO_INCREMENT,
@@ -36,3 +37,5 @@ CREATE TABLE Avaliacao (
 	estrelas INT,
     FOREIGN KEY (fkUsuario) REFERENCES Usuario(idUsuario)
 );
+
+
