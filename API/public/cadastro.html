@@ -89,8 +89,8 @@
       senha_erro.innerHTML = "Este campo não pode ficar vazio."
       erro = true
     }
-    else if (tamanho_senha != 6) {
-      senha_erro.innerHTML = "A senha precisa ter 6 caracteres."
+    else if (tamanho_senha < 6) {
+      senha_erro.innerHTML = "A senha precisa ter ao menos 6 caracteres."
       erro = true
     }
     if (confirmacaoSenhaVar === "") {
