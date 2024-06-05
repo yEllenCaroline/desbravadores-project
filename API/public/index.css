@@ -769,7 +769,7 @@ nav a {
 }
 
 .anel:hover i {
-    border: 6px solid;
+    border: 6px solid;   
     filter: drop-shadow(0 0 20px);
 }
 
