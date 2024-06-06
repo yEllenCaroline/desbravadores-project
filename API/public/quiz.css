@@ -630,6 +630,7 @@ body {
 
 
 #div_rank {
+    margin-top: -30px;
     font-family: "Permanent Marker", cursive;
     color: black;
     font-weight: lighter;

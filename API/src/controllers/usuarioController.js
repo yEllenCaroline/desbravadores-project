@@ -171,6 +171,7 @@ function listar(req, res) {
 
 function listarKpi(req, res) {
     console.log(usuario)
+    var usuario = req.query.usuario
 
     usuarioModel.listarKpi(usuario)
         .then(function (resultado) {

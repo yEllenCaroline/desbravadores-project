@@ -56,7 +56,12 @@ function cadastrarMetricasQuiz(usuario, pontuacao, tempo, rank) {
 
 function listar() {
     var instrucaoSql = `
-    SELECT * FROM MetricasQuiz JOIN Usuario ON fkUsuario = idUsuario ORDER BY pontuacao DESC, tempo ASC;
+   SELECT u.nome, m.pontuacao, m.tempo FROM MetricasQuiz AS m
+	JOIN Usuario AS u 
+		ON m.fkUsuario = u.idUsuario
+			WHERE m.pontuacao = (SELECT MAX(pontuacao) FROM MetricasQuiz WHERE fkUsuario = m.fkUsuario)
+				AND m.tempo = (SELECT MIN(tempo) FROM MetricasQuiz WHERE fkUsuario = m.fkUsuario AND pontuacao = m.pontuacao)
+					ORDER BY m.pontuacao DESC, m.tempo ASC
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);

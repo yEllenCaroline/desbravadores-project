@@ -390,7 +390,7 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="acertar()">A MENSAGEM DO ADVENTO A TODO O MUNDO...</button>
+                            <button onclick="acertar()">A MENSAGEM DO ADVENTO...</button>
                             <button onclick="errar()">SALVAR DO PECADO</button>
                         </div>
                         <div id="div_escolhasColuna">
@@ -434,7 +434,7 @@
                         <div id="div_numQuestao">
                             15.
                         </div>
-                        <h2>O triangulo dos Desbravadores representa...</h2>
+                        <h2>O triângulo dos Desbravadores representa...</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
@@ -602,7 +602,7 @@
                         <div id="div_numQuestao">
                             22.
                         </div>
-                        <h2>Em que ano o primeiro clube do Brasil foi fundado?</h2>
+                        <h2>Em que ano o primeiro clube do MUNDO foi fundado?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
@@ -698,7 +698,7 @@
                         <div id="div_numQuestao">
                             26.
                         </div>
-                        <h2>O que significa o triangulo invertido?</h2>
+                        <h2>O que significa o triângulo invertido?</h2>
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
@@ -706,7 +706,7 @@
                             <button onclick="errar()">AS PIRÂMIDES DO EGITO ANTIGO</button>
                         </div>
                         <div id="div_escolhasColuna">
-                            <button onclick="errar()">OS ULTIMOS EM PRIMEIRO LUGAR</button>
+                            <button onclick="errar()">OS ÚLTIMOS EM PRIMEIRO LUGAR</button>
                             <button onclick="errar()">O BRASÃO DOS DESBRAVADORES</button>
                         </div>
                     </div>
@@ -1138,11 +1138,11 @@
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
                             <button onclick="errar()">CAPELÃO, SECRETÁRIO, PROFESSOR, CAPITÃO</button>
-                            <button onclick="acertar()">CAPITÃO, TESOUREIRO, ALMO-XARIFADO, SECRETÁRIO</button>
+                            <button onclick="acertar()">CAPITÃO, TESOUREIRO, CAPELÃO, SECRETÁRIO</button>
                         </div>
                         <div id="div_escolhasColuna">
                             <button onclick="errar()">CAPITÃO, SECRETÁRIO, DIRETOR, LIBERO</button>
-                            <button onclick="errar()">SECRETÁRIO, CONSELHEIRO, EXECUTIVO, CAPITÃO</button>
+                            <button onclick="errar()">SECRETÁRIO, DIRETOR, EXECUTIVO, CAPITÃO</button>
                         </div>
                     </div>
                     <div id="div_rodape">
@@ -1161,7 +1161,7 @@
                     </div>
                     <div id="div_escolhas">
                         <div id="div_escolhasColuna">
-                            <button onclick="acertar()">ORGANIZAR A UNIDADE E A CONVIVÊNCIA DOS MEMBROS</button>
+                            <button onclick="acertar()">ORGANIZAR A UNIDADE E CONVÍVIO DOS MEMBROS</button>
                             <button onclick="errar()">TRANSFERIR OS FUNDOS PARA A TESOURARIA</button>
                         </div>
                         <div id="div_escolhasColuna">
@@ -1817,7 +1817,7 @@
 
     function listarKpi(usuario) {
 
-        fetch("/usuarios/listarKpi", {
+        fetch(`/usuarios/listarKpi?usuario=${idUsuario}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
